@@ -1,0 +1,89 @@
+
+.body {
+    line-height: 1.428571429;
+    color: #1a1a1a;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+.navbar {
+    margin-bottom: 0px;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+    padding: 17px 16px;
+    text-decoration: none;
+    font-family: "Myriad Pro Semibold" ,Arial, Helvetica, Sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.navbar-default {
+    background: #18bae1;
+    border-bottom: 7px solid #0fb6d0;
+}
+.navbar-default .navbar-nav > .active > a {
+    margin-left: 57px;
+    background: #00cbf3;
+    border: none;
+    border-bottom: #000;
+}
+.navbar-default .navbar-nav > li > a:hover {
+    background-color: #fff;
+    color: #18bae1
+}
+.container-fluid {
+}
+.form-search {
+    color: #fff;
+    float: left;
+    margin-top: -204px;
+    min-height: 1px;
+    position: relative;
+    width: 100%;
+    background-color: #17486c;
+    opacity: 0.9;
+}
+
+
+
+/* ====================index 2============================== */
+.form-book-room{
+    background: #18bae1;
+    margin-top: 50px;
+}
+.form-info {
+    background: red;
+    margin-top: 50px;
+}
+h4{
+    color: #fff;
+}
+h5{
+    color: #fff;
+}
+/* ====================END index 2============================== */
+/* Portrait & landscape phone */
+@media (max-width: 480px) {
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+    .navbar-default .navbar-nav > .active > a {
+        margin-left: 0px;
+    }
+    .form-search {
+    color: #fff;
+    float: left;
+    margin-top: 0px;
+    min-height: 1px;
+    position: relative;
+    width: 100%;
+    background-color: #17486c;
+    opacity: 0.9;
+}
+}
+/* Large desktop */
+@media (min-width: 1200px) {
+
+}

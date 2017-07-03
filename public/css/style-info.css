@@ -1,0 +1,1123 @@
+
+body {
+    line-height: 1.428571429;
+    color: #1a1a1a;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    background: #f5f5f5;
+}
+
+
+a:hover {
+    text-decoration:none;
+}
+/* Header*/
+.menu_bar {
+    display:none;
+}
+
+
+
+/*MOdal - Dialog*/ 
+header nav li .modal {
+    margin-left: 63%;
+    margin-top: 20px;
+}
+header nav li .modal-content{
+    width: 69%;
+}
+header nav li .modal-content ul{
+    background: #00adef;
+    border-radius: 4px;
+    border-top: 3px solid yellow;
+}
+header nav li .modal-content ul li{
+    margin-top: 22px;
+    margin-left: 20px;
+    height: 29px;
+}
+header nav li .modal-content .register-text{
+    margin-left: 0px;
+}
+header nav li .modal-content ul .active {
+    background: none;
+}
+header nav li .modal-content ul .active a:hover{
+    border-top: 3px;
+}
+header nav li .modal-content .tab-content .tab-pane {
+    background: #fff;
+    border-radius: 4px;
+}
+header nav li .modal-content .tab-content .tab-pane .form-login-fb-g {
+    height: 100px;
+}
+header nav li .modal-content .tab-content .tab-pane  p{
+    color: #444;
+    margin-left: 20px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+    padding-top: 8px;
+
+}
+header nav li .modal-content .tab-content .active .form-facebook {
+    background: #4267b2;
+    width: 174px;
+    height: 37px;
+    border-radius: 2px;
+    margin-left: 19px;
+    margin-top: 10px;
+    padding: 0px;
+}
+header nav li .modal-content .tab-content .active .form-facebook .sp-icon {
+    padding: 4px;
+
+}
+header nav li .modal-content .tab-content .active .form-google {
+    background: #dd4b39;
+    width: 174px;
+    height: 37px;
+    border-radius: 2px;
+    margin-left: 12px;
+    margin-top: 10px;
+}
+header nav li .modal-content .tab-content .active .fa{
+    font-size: 23px;
+    margin-right: 12px;
+}
+header nav li .modal-content .tab-content .active span{
+    text-transform: uppercase;
+}
+header nav li .modal-content .tab-content .tab-pane input{
+    margin-left: 20px;
+    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
+    border: 1px solid #cccccc;
+    margin-top: 12px;
+    width: 372px;
+    margin-bottom: 10px;
+}
+header nav li .modal-content .tab-content .tab-pane .form-question #checkbox1 {
+    width: 15px;
+}
+header nav li .modal-content .tab-content .tab-pane .form-question label{
+    padding-top: 10px;
+    color: #777777;
+    font-size: 13px;
+}
+header nav li .modal-content .tab-content .tab-pane a{
+    font-size: 13px;
+    color: #438dc4;
+    text-transform: none;
+    padding: 0px;
+    float: right;
+    margin-top: -24px;
+    margin-right: 20px;
+}
+header nav li .modal-content .close {
+    opacity: .5;
+    margin-right: 12px;
+    margin-top: 0px;
+    font-size: 37px;
+    padding:6px;
+}
+header nav li .modal-content .nav-tabs > li > a {
+    display: inline;
+    margin-right: 0px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-top: 3px;
+    text-transform: unset;
+}
+header nav li .modal-content ul li a:hover{
+    background: #00adef;
+    color: yellow;
+}
+header nav li .modal-content .tab-pane .btn-primary {
+    background: green;
+    width: 372px;
+    margin-left: 20px;
+    height: 38px;
+    margin-top: 20px;
+    margin-bottom: 22px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+/*footer modal login*/
+header nav li .modal-content .tab-pane .modal-footer{
+    padding: 0px;
+    padding-top: 16px;
+    padding-bottom: 20px;
+}
+header nav li .modal-content .tab-pane .modal-footer p{
+    display: inline;
+    margin-right:264px;
+    font-size: 14px;
+    color: #444;
+}
+header nav li .modal-content .tab-pane .modal-footer a{
+    margin-top: 0px;
+    color: #438dc4;
+    text-decoration: underline;
+    margin-right: 213px;
+    font-size: 14px;
+}
+
+/*form Register*/
+header nav li .modal-content .form-register {
+    height: 424px;
+}
+header nav li .modal-content .form-register .text-condition {
+    font-size: 13px;
+}
+header nav li .modal-content .form-register .text-condition span{
+    font-size: 14px;
+    text-transform: none;
+    color: #00adef;
+}
+header nav li .modal-content .form-register .btn {
+    margin-top: 12px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+/*END MOdal - Dialog*/ 
+
+
+
+header {
+    width: 100%;
+}
+ 
+header nav {
+    background:#00adef;
+    z-index:1000;
+    width:100%;
+    border-bottom: 2px solid #0090c4;
+}
+ 
+header nav ul {
+    list-style:none;
+    margin-bottom: 0px;
+    padding-left: 0px;
+}
+header nav ul .active {
+    background: #0090c4;
+}
+header nav .form-menu-bar{
+    margin: 0px 100px;
+}
+header nav ul li {
+    display:inline-block;
+    position: relative;
+}
+header nav ul li .btn {
+    border-radius: 0px;
+    font-size: 14px;
+    height: 48px;
+    background: #00adef;
+    border: none;
+} 
+header nav ul li:hover {
+    background:#fff;
+
+}
+ 
+header nav ul li a {
+    color:#fff;
+    display:block;
+    text-decoration:none;
+    padding: 14px;
+    text-transform: uppercase;
+}
+ 
+header nav ul li a span {
+    margin-right:10px;
+}
+ 
+header nav ul li:hover .children {
+    display:block;
+}
+ 
+header nav ul li .children {
+    display: none;
+    background:#011826;
+    position: absolute;
+    width: 150%;
+    z-index:1000;
+    padding-left: 0px;
+}
+ 
+header nav ul li .children li {
+    display:block;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255,255,255,.5);
+}
+ 
+header nav ul li .children li a {
+    display: block;
+}
+ 
+header nav ul li .children li a span {
+    float: right;
+    position: relative;
+    top:3px;
+    margin-right:0;
+    margin-left:10px;
+}
+ 
+header nav ul li .caret {
+    position: relative;
+    top:-1px;
+    margin-left:10px;
+    margin-right:0px;
+}
+ 
+@media screen and (max-width: 800px) {
+ 
+    .menu_bar {
+        display: block;
+        width: 100%;
+        top: 0;
+        background: #fff;
+        border-bottom: 1px solid #f1f1f1;
+    }
+ 
+    .menu_bar .bt-menu {
+        display: block;
+        padding: 5px 0px 5px 7px;
+        color: #666;
+        overflow: hidden;
+        font-size: 22px;
+        text-decoration: none;
+    }
+ 
+    .menu_bar span {
+        float: left;
+        font-size: 25px;
+        margin-right: 10px;
+        margin-left: 2%;
+        color: #666;
+    }
+ 
+    header nav {
+        width: 90%;
+        height: calc(100% - 80px);
+        position: fixed;
+        right:100%;
+        margin: 0;
+        overflow: scroll;
+        background: #fff;
+    }
+ 
+    header nav ul li {
+        display: block;
+        border-bottom: 1px solid #f1f1f1;
+        background:none;
+        font-size: 17px;
+    }
+    header nav ul .active {
+        background:none;
+    }
+    header nav ul li a {
+        display: block;
+        padding: 2% 0px 2%;
+        color: #777;
+        padding-left: 4%;
+        text-transform: none;
+    }
+ 
+    header nav ul li:hover .children {
+        display: none;
+    }
+    header nav ul li .children {
+        width: 100%;
+        position: relative;
+        padding-left: 0px;
+    }
+    header nav ul li .children li a {
+        margin-left:20px;
+    }
+ 
+    header nav ul li .caret {
+        float: right;
+    }
+    header nav .form-menu-bar{
+        margin: 0px ;
+    }
+}
+/* END Header*/
+
+/*INFO LEFT*/
+    /* address-title*/
+
+
+    .address-title{
+        margin-top: 30px;
+        margin-bottom: 22px;
+        min-height: 40px;
+        border-bottom: 1px solid #cbd3db;
+        padding-left: 0px;
+    }
+    .address-title .glyphicon-play{
+        font-size: 11px;
+    }
+    .address-title .col-sm-5{
+        margin-right: 0px;
+    }
+    .address-title .form-facebook .col-sm-2, .address-title .form-facebook .col-sm-8{
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .address-title .form-facebook .form-item{
+        background: #4267b2;
+        border: 1px solid #4267b2;
+        color: #fff;
+        border-radius: 3px;
+        font-weight: 600;
+        font-size: 12px;
+        margin-left: 8px;
+    }
+    .address-title .form-facebook .form-share {
+        margin-left: -9px;
+    }
+    .address-title .form-facebook .form-item:hover {
+        background: #365899;
+        border: 1px solid #365899;
+    }
+    .address-title .form-facebook .form-item:focus {
+        background: #1b95e0;
+        border: 1px solid #1b95e0;
+    }
+    .address-title .form-facebook .text-info {
+        margin-left: -37px;
+        font-size: 12px;
+        color: #000;
+    }
+    /* info*/
+    #slider1_container{
+        margin-left: 97px;
+        box-shadow: 0 1px 4px rgba(41,51,57,.5);
+        border: 1px solid #007fad;
+    }
+    .info-address-title{
+        padding-left: 0px;
+    }
+    .info-address-title h1{
+        margin: 0px;
+        font-size: 24px;
+    }
+    .info-address-title h2{
+        margin-top: 0px;
+        font-size: 14px;
+    }
+    .info-address-title .info-address{
+        padding-left:0px;
+    }
+    .btn-book-room {
+        width: 30%;
+        height: 36px;
+        border-radius: 2px;
+        text-align: center;
+        padding: 2px;
+        margin-top: 6px;
+        border: 1px solid #4c7b00;
+        background: #66a400;
+    }
+    .btn-book-room1{
+        width: 82%;
+        height: 36px;
+        border-radius: 2px;
+        text-align: center;
+        padding: 2px;
+        margin-top: 6px;
+        border: 1px solid #00b3ef;
+        background: #0898ff;
+    }
+    .btn-book-room1 .btn{
+        font-size: 19px;
+        color: #fff;
+        padding-top: 0px;
+    }
+    .btn-book-room1 .btn span{
+        top: 3px;
+        font-size: 17px;
+    }
+    .btn-book-room .btn{
+        font-size: 19px;
+        color: #fff;
+        padding-top: 0px;
+    }
+    .btn-book-room .btn span{
+        top: 3px;
+        font-size: 17px;
+    }
+    .img-info-hotel{
+        position: relative; 
+        top: 0px; 
+        left: 0px; 
+        width: 800px;
+        height: 534px; 
+        background: #191919; 
+        overflow: hidden;
+    }
+    .img-show{
+        position: absolute; 
+        left: 0px; 
+        top: 0px; 
+        width: 800px; 
+        height: 434px; 
+        overflow: hidden;
+    }
+    .jssort01 {
+        position: absolute;
+        /* size of thumbnail navigator container */
+        width: 800px;
+        height: 100px;
+    }
+
+    .jssort01 .p {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 72px;
+        height: 72px;
+    }
+
+    .jssort01 .t {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    .jssort01 .w {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .jssort01 .c {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 68px;
+        height: 68px;
+        border: #000 2px solid;
+        box-sizing: content-box;
+        background: url(../images/alila/t01.png) -800px -800px no-repeat;
+        _background: none;
+    }
+
+    .jssort01 .pav .c {
+        top: 2px;
+        _top: 0px;
+        left: 2px;
+        _left: 0px;
+        width: 68px;
+        height: 68px;
+        border: #000 0px solid;
+        _border: #fff 2px solid;
+        background-position: 50% 50%;
+    }
+
+    .jssort01 .p:hover .c {
+        top: 0px;
+        left: 0px;
+        width: 70px;
+        height: 70px;
+        border: #fff 1px solid;
+        background-position: 50% 50%;
+    }
+
+    .jssort01 .p.pdn .c {
+        background-position: 50% 50%;
+        width: 68px;
+        height: 68px;
+        border: #000 2px solid;
+    }
+    .jssora05l, .jssora05r {
+        display: block;
+        position: absolute;
+        /* size of arrow element */
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        background: url(../images/a17.png) no-repeat;
+        overflow: hidden;
+    }
+    .jssora05l { background-position: -10px -40px; }
+    .jssora05r { background-position: -70px -40px; }
+    .jssora05l:hover { background-position: -130px -40px; }
+    .jssora05r:hover { background-position: -190px -40px; }
+    .jssora05l.jssora05ldn { background-position: -250px -40px; }
+    .jssora05r.jssora05rdn { background-position: -310px -40px; }
+
+    .jssora05l.jssora05lds { background-position: -10px -40px; opacity: .3; pointer-events: none; }
+    .jssora05r.jssora05rds { background-position: -70px -40px; opacity: .3; pointer-events: none; }
+           
+    * html .jssort01 .c, * html .jssort01 .pdn .c, * html .jssort01 .pav .c {
+        /* ie quirks mode adjust */
+        width /**/: 72px;
+        height /**/: 72px;
+    }
+        /*form-find-fast-left*/
+    .form-find-fast-left{
+        height: 400px;
+        margin-bottom: 17px;
+        border: 1px solid #47bfed;
+        background: #fff;
+        margin-left: 97px;
+        margin-top: 27px;
+    }
+     .form-find-fast-left h2{
+        font-size: 14px;
+        margin-top: 0px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        background-color: #47bfed;
+        padding-left: 15px;
+        color: #555;
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+    .form-find-fast-left .form-suggest{
+        overflow-y:scroll;
+        height:348px;
+    }
+    .form-suggest .col-sm-12{
+        padding: 0px;
+    }
+    .form-find-fast-left .form-suggest .form-info-suggest{
+        width: 611px;
+        margin-left: 15px;
+        border-bottom: 1px solid #ccc;
+    }
+    .form-info-suggest .col-sm-2{
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    .form-info-suggest .col-sm-10{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .form-info-suggest .col-sm-10 h4{
+        margin: 10px 0px 2px -10px;
+        color: #00adef;
+        font-size: 15px;
+    }
+    .form-info-suggest .col-sm-10 p{
+        font-size: 12px;
+        margin-left: -10px;
+    }
+
+
+        /*END form-find-fast-left*/
+    /*box-info-hotel*/
+    .box-info-hotel{
+        width: 451px;
+        border: 1px solid red;
+        height: 500px;
+    }
+    .title-info-hotel{
+        width: 451px;
+        border: 1px solid yellow;
+        height: 42px; 
+        margin-left: -31px;
+    }
+     .form-find-fast{
+        margin-bottom: 17px;
+        border: 1px solid #007fad;
+        width: 436px;
+        box-shadow: 0 1px 4px rgba(41,51,57,.5);
+        background: #fff;
+    }
+     .form-find-fast h2{
+        font-size: 18px;
+        text-align: center;
+        margin-top: 0px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        color: #fff;
+        background-color: #007fad;
+        border: 1px solid #007fad;
+        border-bottom: 1px solid #005f81;
+        font-family: unset;
+    }
+    .form-find-fast p{
+        margin-left: 15px;
+        margin-right: 15px;
+        font-size: 13px;
+    }
+    .info-hotel-price{
+        width: 434px;
+    }
+    .info-hotel-price table{
+        background: #fff;
+        border: 1px solid #007fad;
+        box-shadow: 0 1px 4px rgba(41,51,57,.5);
+        border: 1px solid #007fad;
+    }
+    .info-hotel-price thead{
+        font-family:unset;
+        color: #fff;
+        background-color: #007fad;
+        border: 1px solid #007fad;
+        border-bottom: 1px solid #005f81;
+    }
+    .form-info-promotion a{
+        color: #000;
+        margin-left: 15px;
+    }
+    .form-info-promotion a span{
+        color: green;
+    }
+    .form-info-promotion p {
+        margin-left: 15px;
+    }
+    .form-info-promotion p span{
+        color: blue;
+        font-size: 15px;
+    }
+    .form-service{
+        height: 127px;
+    }
+    .form-service .col-sm-12{
+        margin-bottom: 7px;
+    }
+    .form-service .col-sm-4{
+        padding-right: 0px;
+        padding-left: 10px;
+    }
+    .form-service .col-sm-4 a{
+        font-size: 13px;
+    }
+    .form-service a{
+        color: #333;
+    }
+    .form-service span{
+        color: green;
+        font-size: 14px;
+    }
+    .form-info-add-text .form-info-add {
+        margin-bottom: 7px;
+    }
+    .form-info-add-text .form-info-add .form-a{
+        margin-left:15px;
+        padding-bottom: 10px;
+    }
+/*END INFO LEFT*/
+
+/* Form-Comment*/
+.form-comment {
+    margin-left: 112px;
+    margin-top: 30px;
+    width: 1125px;
+    border-top: 1px solid red;
+    padding-left: 0px;
+}
+.form-comment .form-info-com{
+    height: 700px;
+    margin-top: 15px;
+    width: 1125px;
+    margin-bottom: 17px;
+    border: 1px solid #47bfed;
+    background: #fff;
+}
+.form-comment .form-info-com h2{
+    font-size: 15px;
+    margin-top: 0px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #47bfed;
+    padding-left: 15px;
+    color: #555;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+
+.score_bar {
+    width: 20%;
+}
+.score_bar {
+    background: #e9f0fa;
+    border: 1px solid #cfcfcf;
+    height: 8px;
+    float: left;
+    margin: 0;
+    width: 100%;
+    padding-left: 0px;
+    padding-right:0px;
+    border-radius: 3px;
+}
+.score_bar_value {
+    height: 6px;
+    border-left: 2px;
+}
+.score_bar_value {
+    background: #5bbaff;
+    width: 0;
+}
+    /*form-rate*/
+.form-rate .result-rate {
+    width: 160px;
+    height: 150px;
+    text-align: center;
+    background: #007fad;
+    margin-top: 9px;
+    margin-bottom: 30px;
+    border-radius: 30px 30px 30px 30px;
+    padding-top: 27px;
+    margin-left: 30px;
+}
+.form-rate .result-rate .rate{
+    font-size: 40px;
+    color: #fff;
+}
+.form-rate .result-rate .text{
+    font-size: 20px;
+    color: #fff;
+}
+.form-rate .result-rate::before{
+    border-top: 35px solid transparent;
+    border-right: 35px solid #007fad;
+    border-bottom: 35px solid transparent;
+    border-left: 0;
+    content: " ";
+    height: 0;
+    position: absolute;
+    width: 0;
+    left: -35px;
+    top: 38px;
+}
+.form-rate .all-rate{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 46px;
+    margin-left: 3px;
+}
+.form-rate {
+    border-bottom: 1px solid #47bfed;
+}
+.form-rate .rate-title .price{
+    float: left;
+}
+.form-rate .form-info-rate{
+    margin-top: 20px;
+}
+.form-rate .rate-title .number{
+    float: right;
+}
+    /*All Commnet*/
+.form-all-comment {
+    height: 466px;
+    overflow-y: scroll;
+    background: #fafafa;
+}
+.form-comment-people {
+    border: 1px solid #e8e8e9;
+    margin-top: 15px;
+    background: #fff;
+}
+.form-comment-people .info-people{
+    text-align: center;
+    margin-top: 20px;
+}
+.form-comment-people .info-people hr{
+    margin: 5px 0px 5px 0px;
+}
+.form-comment-people .box-rate-people {
+    margin-top: 17px;
+    margin-bottom: 10px;
+}
+.form-comment-people .box-rate-people .box-rate{
+    padding: 5px 7px;
+    border-radius: 4px 0 0 4px;
+    background: #8fc63d;
+    font-weight: 700;
+    font-size: 15px;
+    color: #fff;
+}
+.form-comment-people .box-rate-people .box-title{
+    border-radius: 0 5px 5px 0;
+    font-weight: 400;
+    background: #fff;
+    color: #555;
+    border: 2px solid #8fc63d;
+    padding: 4px 9px;
+    margin-left: -6px;
+}
+.form-comment-people .box-rate-people .box-review{
+    margin-top: 7px;
+}
+/* END Form-Comment*/
+
+/* Portrait & landscape phone */
+@media (max-width: 768px) {
+
+    .container {
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    
+    /*MENU TOP*/
+    .menu_bar {
+        display: block;
+        width: 100%;
+        top: 0;
+        background: #fff;
+        border-bottom: 1px solid #f1f1f1;
+    }
+    header nav .form-menu-bar{
+        margin: 0px ;
+    }
+    .menu_bar .bt-menu {
+        display: block;
+        padding: 2% 0px 1% 7px;
+        color: #666;
+        overflow: hidden;
+        font-size: 16px;
+        text-decoration: none;
+    }
+    .menu_bar span {
+        float: left;
+        font-size: 17px;
+        margin-right: 10px;
+        margin-left: 4%;
+        color: #666;
+    }
+    /*End MENU TOP*/  
+    /*address*/
+    .info-address-title .info-address {
+        margin-top:10px;
+    }
+    .info-address-title .info-address h1{
+        font-size: 17px;
+    }
+    .info-address-title .info-address h2{
+        font-size: 13px;
+    }
+    .col-xs-12{
+        padding-left:15px;
+        padding-right: 15px;
+        margin-bottom: 4px;
+    }
+    .btn-book-room{
+        width: 100%;
+        height: 30px;
+    }
+    .btn-book-room .btn{
+        font-size: 17px;
+    }
+    #slider1_container{
+        margin-left:0px;
+    }
+    .col-sm-7{
+        padding: 0px;
+    }
+    .form-xs-12{
+        padding: 7px;
+    }
+    .form-find-fast{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .form-find-fast h2{
+        font-size: 14px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        margin-bottom: 0px;
+    }
+    .form-find-fast p{
+        font-size: 11px;
+        margin: 5px;
+    }
+    .info-hotel-price {
+        width: 100%;
+    }
+    .info-hotel-price thead{
+        font-size: 12px;
+    }
+    .info-hotel-price .table {
+        margin-bottom: 10px;
+    }
+    .info-hotel-price .table > thead > tr > th{
+        padding: 5px 0px 5px 2px;
+    }
+    .info-hotel-price .table > tbody > tr > td{
+        font-size: 12px;
+        padding: 6px 0px 6px 2px;
+    }
+    .form-info-promotion a {
+        margin-left: 4px;
+        font-size: 12px;
+    }
+    .form-info-promotion p{
+        margin: 0px 0px 0px 4px;
+    }
+    .form-info-promotion p span{
+        font-size: 13px;
+    }
+    .form-service{
+        height: 146px;
+    }
+    .form-service a{
+        font-size: 12px;
+    }
+    .form-service span{
+        font-size: 12px;
+    }
+    .form-info-add-text .form-info-add{
+        margin-bottom: 0px;
+    }
+    .form-info-add-text .form-info-add a{
+        font-size: 12px;
+    }
+    .form-info-add-text .form-info-add .form-a{
+        font-size: 12px;
+        margin-left: 10px;
+    }
+
+    .btn-book-room1 {
+        width: 100%;
+    }
+
+    /*commnet*/
+    .form-comment {
+        margin: 0px;
+        width: 100%;
+        padding-left:7px;
+        padding-right: 7px;
+    }
+    .form-comment .form-info-com{
+        width: 100%;
+    }
+    .form-rate{
+        padding: 0px;
+    }
+    .form-rate .col-xs-12{
+        padding: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .form-rate .col-xs-5{
+        margin-top: 37px;
+        margin-left: 0px;
+    }  
+    .form-rate .col-xs-5 span{
+        font-size: 13px;
+        font-weight: 600;
+        color: #666;
+    }
+    .form-rate .result-rate .rate {
+        font-size: 32px;
+        color: #fff;
+    }
+    .form-rate .result-rate .text {
+        font-size: 17px;
+        color: #fff;
+    }
+    .form-rate .result-rate {
+        width: 50%;
+        height: 118px;
+        text-align: center;
+        background: #007fad;
+        margin-top: 9px;
+        margin-bottom: 0px;
+        border-radius: 15px;
+        padding-top: 27px;
+        margin-left: 14px;
+    }
+    .form-rate .result-rate::before {
+        border-top: 17px solid transparent;
+        border-right: 26px solid #007fad;
+        border-bottom: 17px solid transparent;
+        border-left: 0;
+        content: " ";
+        height: 0;
+        position: absolute;
+        width: 0;
+        left: -26px;
+        top: 40px;
+    }
+    .form-rate .box-col-xs-12-rate{
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 20px;
+    }
+    .score_bar{
+        width: 100%;
+    }
+    .form-info-rate .col-xs-12{
+        margin-top: 7px;
+    }
+    .form-info-rate .rate-title .price{
+        float: left;
+    }
+    .form-info-rate .rate-title .number1{
+        float: right;
+    }
+    .form-info-rate .rate-title span{
+        font-size: 12px;
+    }
+    .form-comment .form-info-com {
+        height: 100%;
+    }
+    .form-comment-people .info-people {
+        text-align: center;
+        margin-top: 4px;
+    }
+    .form-comment-people .info-people strong{
+        font-size: 12px;
+    }
+    .form-comment-people .info-people span{
+        font-size: 12px;
+    }
+    .form-comment-people .box-rate-people {
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+    .form-comment-people .box-rate-people .box-review {
+        margin-top: 2px;
+    }
+    .form-comment-people .box-rate-people .box-review small{
+        font-size: 11px;
+    }
+    .form-comment-people {
+        margin-top: 4px;
+    }
+    @media (min-width: 660px) {
+        #slider1_container {
+            margin-left: 3%;
+        }
+
+    }
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 800px) {
+   
+
+}
+/* Large desktop */
+@media (min-width: 1200px) {
+
+}
+
+
+
+
+
+
+
+
