@@ -385,7 +385,16 @@ class HomesController extends Controller
 
 	public function viewMap(Request $request) {
 		$id = $request->id;
-		$data = DB::table('nha_nghi')->where('id',$id)->get()->toArray();
+		$data = DB::table('nha_nghi')
+		->where('nha_nghi.id',$id)
+		->join('nhanghi_hinhanh','nhanghi_hinhanh.nn_id','=','nha_nghi.id')
+		->groupBy('nhanghi_hinhanh.nn_id')
+		->join('nhanghi_giatien','nhanghi_giatien.nn_id','=','nha_nghi.id')
+		->get()
+		->toArray();
+		foreach ($data as $key => $value) {
+			$value->url_hinhanh = str_replace('\\', '', $value->url_hinhanh);
+		}
 		if (isset($data)) {
 			return $data;
 		}

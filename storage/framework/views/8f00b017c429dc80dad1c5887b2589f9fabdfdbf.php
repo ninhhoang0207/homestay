@@ -71,7 +71,9 @@
    </div>
 
 
-   <form class="form-search container">
+   <form class="form-search container" id="search_form" method="POST">
+      <?php echo e(csrf_field()); ?>
+
       <div class="row">
          <div class="col-xs-12 col-sm-12 ">
             <div class="col-xs-12 col-sm-4 col-sm-offset-4 ">
@@ -90,14 +92,14 @@
                <div class="col-xs-6 col-sm-2">
                   <h5><?php echo app('translator')->getFromJson('hotel/general.trangchu.thoigiannhan'); ?></h5>
                   <div class="form-input">
-                     <input type="text" class="form-control form-box" id="from_time" placeholder="">
+                     <input type="text" class="form-control form-box" name="from_time" id="from_time" placeholder="">
                      <i class="calender-o"></i>
                   </div>
                </div> <!--End col-sm-2 -->
                <div class="col-xs-6 col-sm-2">
                   <h5><?php echo app('translator')->getFromJson('hotel/general.trangchu.thoigiantra'); ?></h5>
                   <div class="form-input">
-                     <input type="text" class="form-control form-box" id="to_time" placeholder="">
+                     <input type="text" class="form-control form-box" name="to_time" id="to_time" placeholder="">
                      <i class="calender-o"></i>
                   </div>
                </div> <!--End col-sm-2 -->
@@ -106,7 +108,8 @@
                   <input type="text" value="" class="form-control" placeholder="1 ngày" />
                </div><!--End col-sm-1 -->
                <div class="col-xs-12 col-sm-2">
-                  <button type="button" class="btn_search" onclick="search()"><span class="glyphicon glyphicon-search"></span> <?php echo app('translator')->getFromJson('hotel/general.trangchu.timkiem'); ?></button>
+                  <!-- <button type="button" class="btn_search" onclick="search()"><span class="glyphicon glyphicon-search"></span> <?php echo app('translator')->getFromJson('hotel/general.trangchu.timkiem'); ?></button> -->
+                   <button  type="submit" class="btn_search"><span class="glyphicon glyphicon-search"></span> <?php echo app('translator')->getFromJson('hotel/general.trangchu.timkiem'); ?></button>
                </div><!--End col-sm-2 -->
                <div class="col-sm-3 features hidden-xs">
                   <img src="<?php echo e(asset('fontend/images/iconcard.png')); ?>" alt="">
@@ -146,7 +149,6 @@ var searchBox = new google.maps.places.SearchBox(input);
 google.maps.event.addListener(searchBox,'places_changed',function(){
     var places = searchBox.getPlaces();
     if (places[0].geometry != null) {
-    	console.log(places[0].geometry.location.lat()+":"+places[0].geometry.location.lng());
     	$('#lat').val(places[0].geometry.location.lat());
     	$('#lng').val(places[0].geometry.location.lng());
         check_place = 1;

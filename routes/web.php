@@ -55,6 +55,7 @@ Route::post('user-update','AdminUserController@update')->name('userUpdate');
 
 //Home
 Route::get('/','HomesController@index')->name('home');
+Route::post('/','HomesController@searchHotel');
 Route::post('sign-in','HomesController@signin')->name('signin');
 Route::get('search-hotel/{coordinate?}/{range?}','HomesController@searchHotel')->name('searchHotel');
 Route::post('search-hotel/{coordinate?}/{range?}','HomesController@searchHotel')->name('searchHotel');

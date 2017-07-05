@@ -27,3 +27,10 @@
 	</div><!-- end panel -->
 </div><!-- end feature -->
 <?php endforeach ?>
+<script type="text/javascript">
+	var page = $('.endless-pagination').data('next-page');
+		if (page == null || page == '')
+		{
+			$('#readmore').hide();
+		}
+</script>

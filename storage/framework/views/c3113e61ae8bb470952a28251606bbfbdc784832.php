@@ -320,7 +320,8 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title"></h4>
+					<h4 class="modal-title">
+					</h4>
 				</div>
 				<div class="modal-body">
 					<div id="map-canvas-modal"></div>
@@ -400,7 +401,8 @@
 			$('#hotel-data').append(data);
 		});
 	});
-
+	//Address of a hotel;
+	var view_map = null;
 	$('.map-location').on('click',function(event) {
 		event.preventDefault();
 		var url = $(this).attr('href');
@@ -408,24 +410,81 @@
 			url:url,
 		}).done(function(data) {
 			temp = data[0];
-			var view_map = new google.maps.Map(document.getElementById('map-canvas-modal'),
+			view_map = new google.maps.Map(document.getElementById('map-canvas-modal'),
 			{
 				center : {lat:temp.toado_lat,lng:temp.toado_lng},
 				zoom : 13,
 			});
-			// var marker = new google.maps.Marker({
-			// 	position : {lat:temp.toado_lat,lng:temp.toado_lng},
-			// 	title : temp.ten,
-			// 	map : view_map,
-			// });
+			var url_img = "<?php echo e(asset('')); ?>";
+			url_img += temp.url_hinhanh;
+			var gia = '<strong><?php echo app('translator')->getFromJson("search/general.giagiodau"); ?></strong>: '+temp.phongdon_motgio+'đ</br><strong><?php echo app('translator')->getFromJson("search/general.giotieptheo"); ?></strong>: '+temp.phongdon_giotieptheo+'đ/<?php echo app('translator')->getFromJson("search/general.gio"); ?></br><strong><?php echo app('translator')->getFromJson("search/general.giaquadem"); ?></strong>: '+temp.phongdon_quadem+'đ/<?php echo app('translator')->getFromJson("search/general.dem"); ?></br><strong><?php echo app('translator')->getFromJson("search/general.giangaydem"); ?></strong>: '+temp.phongdon_nhieungay+'đ/<?php echo app('translator')->getFromJson("search/general.ngay"); ?>';
+			var url = "<?php echo e(route('detailHotel')); ?>?hotel_id="+temp.nn_id;
+			var content = '<div class="row" style="padding-left:20px;"><div><h4>Nhà nghỉ: '+temp.ten+'</h4><h5>Địa chỉ: '+temp.diachi+'</h5></div><div class="col-md-3"><img src="'+url_img+'" height="100px" width="100px"></img></div><div class="col-md-9" style="padding-left:50px">'+gia+'<hr><a href="'+url+'" target="_blank" class="btn btn-danger book-room" style="margin-top:-20px"><?php echo app('translator')->getFromJson("search/general.datphongngay"); ?></a><a href="'+url+'" class="btn btn-primary" target="_blank" style="float:right;margin-top:-18px"><?php echo app('translator')->getFromJson("search/general.xemchitiet"); ?></a></div></div>';
+			var infowindow = new google.maps.InfoWindow({
+				content: content
+			});
+			var marker = new google.maps.Marker({
+				position : {lat:temp.toado_lat,lng:temp.toado_lng},
+				title : temp.ten,
+				map : view_map,
+			});
+			marker.addListener('click', function() {
+			 	infowindow.open(view_map, marker);
+			});
+			var title = temp.ten;
+			$('.modal-title').text(title);
 			$('#viewMapModal').modal('show');
 		});
 	});
+	$('#viewMapModal').on('shown.bs.modal', function(e) {
+		var centerPoint = view_map.getCenter();
+        google.maps.event.trigger(view_map, "resize");
+		view_map.setCenter(centerPoint);
+    });
 	//Google map
 	map = null;
 	isLoadMap = 0;
 	markers = [];
-	$('#view-map').on('click',function(event){
+// 	$('#view-map').on('click',function(event){
+// 		event.preventDefault();
+// 		$('#collapseExample').collapse('toggle');
+// 		var map_lat = <?php echo e($toado[0]); ?>;
+// 		var map_lng = <?php echo e($toado[1]); ?>;
+// 		map = new google.maps.Map(document.getElementById('map-canvas'), {
+// 			center: {lat: map_lat, lng: map_lng},
+// 			zoom: 13
+// 		});
+// 		isLoadMap=0;
+// 		markers=[];
+// 		if (isLoadMap == 0) {
+// 			var length = <?php echo e($data->count()); ?>;
+// 			var infos = [];
+// 			var infowindow = new google.maps.InfoWindow({
+// 			});
+// 			<?php foreach ($data as $key => $value): ?>
+// 			var marker = new google.maps.Marker({
+// 				position : {lat: <?php echo e($value->toado_lat); ?>, lng: <?php echo e($value->toado_lng); ?>},
+// 				title:'<?php echo e($value->ten); ?>',
+// 			});
+// 			markers.push(marker);
+// 			var url_img = "<?php echo e(asset($value->url_hinhanh)); ?>";
+// 			var mota = "123";
+// 			var url = "<?php echo e(route('detailHotel')); ?>?hotel_id="+<?php echo e($value->nn_id); ?>;
+// 			var content = '<div class="row" style="padding:20px"><div><h4>Nhà nghỉ: <?php echo e($value->ten); ?></h4><h5>Địa chỉ: <?php echo e($value->diachi); ?></h5></div><div class="col-md-3"><img src="'+url_img+'" height="100px" width="100px"></img></div><div class="col-md-9"><strong>Mô tả về nhà nghỉ: </strong><p>'+mota+'</p></br><a href="'+url+'" class="btn btn-primary" style="float:right">Xem chi tiết về nhà nghỉ</a></div></div>';
+// 			infowindow.setContent(content);
+// 			infos.push(infowindow);
+// 		<?php endforeach ?>
+// 		console.log(infowindow);
+// 		for (var i = markers.length - 1; i >= 0; i--) {
+// 			markers[i].setMap(map);
+// 			marker.addListener('click', function() {
+// 				infowindow.open(map, markers[i]);
+// 			});
+// 		}
+// 		isLoadMap++;
+// 	}
+// });
+$('#view-map').on('click',function(event){
 		event.preventDefault();
 		$('#collapseExample').collapse('toggle');
 		var map_lat = <?php echo e($toado[0]); ?>;
@@ -438,15 +497,29 @@
 		markers=[];
 		if (isLoadMap == 0) {
 			var length = <?php echo e($data->count()); ?>;
+			var contents = [];
+			var titles = [];
+			var infowindow = new google.maps.InfoWindow();
 			<?php foreach ($data as $key => $value): ?>
 			var marker = new google.maps.Marker({
 				position : {lat: <?php echo e($value->toado_lat); ?>, lng: <?php echo e($value->toado_lng); ?>},
 				title:'<?php echo e($value->ten); ?>',
 			});
 			markers.push(marker);
+			var url_img = "<?php echo e(asset($value->url_hinhanh)); ?>";
+			var gia = '<strong><?php echo app('translator')->getFromJson("search/general.giagiodau"); ?></strong>: <?php echo e($value->phongdon_motgio); ?>đ</br><strong><?php echo app('translator')->getFromJson("search/general.giotieptheo"); ?></strong>: <?php echo e($value->phongdon_nhieungay); ?>đ/<?php echo app('translator')->getFromJson("search/general.gio"); ?></br><strong><?php echo app('translator')->getFromJson("search/general.giaquadem"); ?></strong>: <?php echo e($value->phongdon_quadem); ?>đ/<?php echo app('translator')->getFromJson("search/general.dem"); ?></br><strong><?php echo app('translator')->getFromJson("search/general.giangaydem"); ?></strong>: <?php echo e($value->phongdon_nhieungay); ?>đ/<?php echo app('translator')->getFromJson("search/general.ngay"); ?>'; 
+			var url = "<?php echo e(route('detailHotel')); ?>?hotel_id="+<?php echo e($value->nn_id); ?>;
+			var content = '<div class="row" style="margin-left:20px"><div><h4>Nhà nghỉ: <?php echo e($value->ten); ?></h4><h5>Địa chỉ: <?php echo e($value->diachi); ?></h5></div><div class="col-md-3"><img src="'+url_img+'" height="100px" width="100px"></img></div><div class="col-md-9" style="padding-left:50px">'+gia+'<hr><a href="'+url+'"target="_blank" class="btn btn-danger book-room" style="margin-top:-20px"><?php echo app('translator')->getFromJson("search/general.datphongngay"); ?></a><a href="'+url+'" class="btn btn-primary" "target="_blank" style="float:right;margin-top:-18px"><?php echo app('translator')->getFromJson("search/general.xemchitiet"); ?></a></div></div>';
+			contents.push(content);
+			titles.push(marker.title);
 		<?php endforeach ?>
 		for (var i = markers.length - 1; i >= 0; i--) {
 			markers[i].setMap(map);
+			markers[i].addListener('click', function() {
+				var index = titles.indexOf(this.title);
+				infowindow.setContent(contents[index]);				
+				infowindow.open(map,this);
+			});
 		}
 		isLoadMap++;
 	}

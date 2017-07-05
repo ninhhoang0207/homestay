@@ -16,7 +16,7 @@
 			<a href=<?php echo e(route('detailHotel')); ?>?hotel_id=<?php echo e($value->nn_id); ?>""><?php echo e($value->ten); ?></a>
 			<p><span class="glyphicon glyphicon-flag"></span> <?php echo e($value->diachi); ?></p>
 			<p class="hidden-lg"><span class="glyphicon glyphicon-usd"></span> <?php echo app('translator')->getFromJson('search/general.giodau'); ?> <?php echo e($value->phongdon_motgio); ?> k/h, <?php echo app('translator')->getFromJson('search/general.quadem'); ?> <?php echo e($value->phongdon_quadem); ?>, <?php echo e($value->phongdon_nhieungay); ?>k/<?php echo app('translator')->getFromJson('search/general.ngay'); ?></p>
-			<p class="hidden-xs"><span class="glyphicon glyphicon-map-marker"></span> <?php echo app('translator')->getFromJson('search/general.khoangcach'); ?>: <?php echo e($value->khoangcach); ?>km <?php echo app('translator')->getFromJson('search/general.quadem'); ?> <a href="" class="view-map">( <?php echo app('translator')->getFromJson('search/general.xembando'); ?> )</a></p>
+			<p class="hidden-xs"><span class="glyphicon glyphicon-map-marker"></span> <?php echo app('translator')->getFromJson('search/general.khoangcach'); ?>: <?php echo e($value->khoangcach); ?>km <?php echo app('translator')->getFromJson('search/general.quadem'); ?> <a href="<?php echo e(route('viewMap',['id'=>$value->nn_id])); ?>" class="view-map map-location">( <?php echo app('translator')->getFromJson('search/general.xembando'); ?> )</a></p>
 			<?php foreach ($value->dichvu as $key1 => $value1): ?>
 				<div class="tooltip-x hidden-xs"> <img src="<?php echo e(asset('images/'.$value1.'.png')); ?>" alt="">
 					<span class="tooltiptext"><?php echo e($ten_dichvu[$value1]); ?></span>
@@ -110,7 +110,48 @@
 			$('#collapseExample').collapse('hide');
 		});
 	});
-
+	//Adress of a hotel
+	var view_map = null;
+	$('.map-location').on('click',function(event) {
+		event.preventDefault();
+		var url = $(this).attr('href');
+		$.ajax({
+			url:url,
+		}).done(function(data) {
+			temp = data[0];
+			view_map = new google.maps.Map(document.getElementById('map-canvas-modal'),
+			{
+				center : {lat:temp.toado_lat,lng:temp.toado_lng},
+				zoom : 13,
+			});
+			var url_img = "<?php echo e(asset('')); ?>";
+			url_img += temp.url_hinhanh;
+			// var mota = temp.mota.length>300?temp.mota.substring(0,150)+"...":temp.mota;
+			var gia = '<strong><?php echo app('translator')->getFromJson("search/general.giagiodau"); ?></strong>: '+temp.phongdon_motgio+'đ</br><strong><?php echo app('translator')->getFromJson("search/general.giotieptheo"); ?></strong>: '+temp.phongdon_giotieptheo+'đ/<?php echo app('translator')->getFromJson("search/general.gio"); ?></br><strong><?php echo app('translator')->getFromJson("search/general.giaquadem"); ?></strong>: '+temp.phongdon_quadem+'đ/<?php echo app('translator')->getFromJson("search/general.dem"); ?></br><strong><?php echo app('translator')->getFromJson("search/general.giangaydem"); ?></strong>: '+temp.phongdon_nhieungay+'đ/<?php echo app('translator')->getFromJson("search/general.ngay"); ?>';
+			var url = "<?php echo e(route('detailHotel')); ?>?hotel_id="+temp.nn_id;
+			var content = '<div class="row" style="padding-left:20px;"><div><h4>Nhà nghỉ: '+temp.ten+'</h4><h5>Địa chỉ: '+temp.diachi+'</h5></div><div class="col-md-3"><img src="'+url_img+'" height="100px" width="100px"></img></div><div class="col-md-9" style="padding-left:50px">'+gia+'<hr><a href="'+url+'" target="_blank" class="btn btn-danger book-room" style="margin-top:-20px"><?php echo app('translator')->getFromJson("search/general.datphongngay"); ?></a><a href="'+url+'" class="btn btn-primary" target="_blank" style="float:right;margin-top:-18px"><?php echo app('translator')->getFromJson("search/general.xemchitiet"); ?></a></div></div>';
+			var infowindow = new google.maps.InfoWindow({
+				content: content
+			});
+			var marker = new google.maps.Marker({
+				position : {lat:temp.toado_lat,lng:temp.toado_lng},
+				title : temp.ten,
+				map : view_map,
+			});
+			marker.addListener('click', function() {
+			 	infowindow.open(view_map, marker);
+			});
+			var title = temp.ten;
+			$('.modal-title').text(title);
+			$('#viewMapModal').modal('show');
+		});
+	});
+	$('#viewMapModal').on('shown.bs.modal', function(e) {
+		var centerPoint = view_map.getCenter();
+        google.maps.event.trigger(view_map, "resize");
+		view_map.setCenter(centerPoint);
+    });
+	//Address of all hotels
 	$('#view-map').on('click',function(event){
 		event.preventDefault();
 		$('#collapseExample').collapse();
@@ -124,15 +165,29 @@
 		markers=[];
 		if (isLoadMap == 0) {
 			var length = <?php echo e($data->count()); ?>;
+			var contents = [];
+			var titles = [];
+			var infowindow = new google.maps.InfoWindow();
 			<?php foreach ($data as $key => $value): ?>
 			var marker = new google.maps.Marker({
 				position : {lat: <?php echo e($value->toado_lat); ?>, lng: <?php echo e($value->toado_lng); ?>},
 				title:'<?php echo e($value->ten); ?>',
 			});
 			markers.push(marker);
+			var url_img = "<?php echo e(asset($value->url_hinhanh)); ?>";
+			var gia = '<strong><?php echo app('translator')->getFromJson("search/general.giagiodau"); ?></strong>: <?php echo e($value->phongdon_motgio); ?>đ</br><strong><?php echo app('translator')->getFromJson("search/general.giotieptheo"); ?></strong>: <?php echo e($value->phongdon_nhieungay); ?>đ/<?php echo app('translator')->getFromJson("search/general.gio"); ?></br><strong><?php echo app('translator')->getFromJson("search/general.giaquadem"); ?></strong>: <?php echo e($value->phongdon_quadem); ?>đ/<?php echo app('translator')->getFromJson("search/general.dem"); ?></br><strong><?php echo app('translator')->getFromJson("search/general.giangaydem"); ?></strong>: <?php echo e($value->phongdon_nhieungay); ?>đ/<?php echo app('translator')->getFromJson("search/general.ngay"); ?>'; 
+			var url = "<?php echo e(route('detailHotel')); ?>?hotel_id="+<?php echo e($value->nn_id); ?>;
+			var content = '<div class="row" style="margin-left:20px"><div><h4>Nhà nghỉ: <?php echo e($value->ten); ?></h4><h5>Địa chỉ: <?php echo e($value->diachi); ?></h5></div><div class="col-md-3"><img src="'+url_img+'" height="100px" width="100px"></img></div><div class="col-md-9" style="padding-left:50px">'+gia+'<hr><a href="'+url+'"target="_blank" class="btn btn-danger book-room" style="margin-top:-20px"><?php echo app('translator')->getFromJson("search/general.datphongngay"); ?></a><a href="'+url+'" class="btn btn-primary" "target="_blank" style="float:right;margin-top:-18px"><?php echo app('translator')->getFromJson("search/general.xemchitiet"); ?></a></div></div>';
+			contents.push(content);
+			titles.push(marker.title);
 			<?php endforeach ?>
 			for (var i = markers.length - 1; i >= 0; i--) {
 				markers[i].setMap(map);
+				markers[i].addListener('click', function() {
+				var index = titles.indexOf(this.title);
+				infowindow.setContent(contents[index]);				
+				infowindow.open(map,this);
+			});
 			}
 			isLoadMap++;
 		}
