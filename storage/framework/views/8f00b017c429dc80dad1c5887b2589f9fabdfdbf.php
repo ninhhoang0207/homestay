@@ -109,7 +109,7 @@
                </div><!--End col-sm-1 -->
                <div class="col-xs-12 col-sm-2">
                   <!-- <button type="button" class="btn_search" onclick="search()"><span class="glyphicon glyphicon-search"></span> <?php echo app('translator')->getFromJson('hotel/general.trangchu.timkiem'); ?></button> -->
-                   <button  type="submit" class="btn_search"><span class="glyphicon glyphicon-search"></span> <?php echo app('translator')->getFromJson('hotel/general.trangchu.timkiem'); ?></button>
+                  <button type="submit" class="btn_search" ><span class="glyphicon glyphicon-search"></span> <?php echo app('translator')->getFromJson('hotel/general.trangchu.timkiem'); ?></button>
                </div><!--End col-sm-2 -->
                <div class="col-sm-3 features hidden-xs">
                   <img src="<?php echo e(asset('fontend/images/iconcard.png')); ?>" alt="">
@@ -149,6 +149,7 @@ var searchBox = new google.maps.places.SearchBox(input);
 google.maps.event.addListener(searchBox,'places_changed',function(){
     var places = searchBox.getPlaces();
     if (places[0].geometry != null) {
+    	console.log(places[0].geometry.location.lat()+":"+places[0].geometry.location.lng());
     	$('#lat').val(places[0].geometry.location.lat());
     	$('#lng').val(places[0].geometry.location.lng());
         check_place = 1;
@@ -158,6 +159,17 @@ google.maps.event.addListener(searchBox,'places_changed',function(){
     }
 });
 
+$('#search_form').submit(function(e) {
+  var address = $('#address').val();
+  if (address === '' || address === null || check_place != 1) {
+    alert('<?php echo e(Lang::get('val.wrong_address')); ?>');
+    return false;
+  }
+  var lat = $('#lat').val();
+  var lng = $('#lng').val();
+  var url = "<?php echo e(route('searchHotel')); ?>" + "/" + lat + "-" + lng;
+  $(this).attr('action',url);
+});
 function search(){
     var address = $('#address').val();
     if (address === '' || address === null || check_place != 1) {

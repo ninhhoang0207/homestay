@@ -34,7 +34,11 @@ class HomesController extends Controller
 	}
 
 	public function searchHotel(Request $request,$coordinate,$range=3){
+		if ($request->_token) {
+			$coordinate = $request->lat."-".$request->lng;
+		}
 		$toado = explode("-", $coordinate);
+
 		$data = $this->query($coordinate,$range);
 		$ten_dichvu = array(
 			1		=>	'Wifi miễn phí',
@@ -133,6 +137,7 @@ class HomesController extends Controller
 				'toado'		=> 	$toado,
 				'kq_timkiem'=>	$count_data_price,
 				'data_type'	=>	'sortByPopular',
+				'ngay'		=>	explode(' ', $request->from_time)[0],
 			]);
 		}
 	}

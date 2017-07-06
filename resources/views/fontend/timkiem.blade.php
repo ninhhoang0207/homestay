@@ -183,43 +183,46 @@
 					</div>
 					<div class="col-xs-12 col-sm-9 right-content">
 						<div class="row">
-							<div class="col-xs-12 col-sm-12 form-search ">
-								<div class="col-xs-9 col-sm-5">
-									<div class="form-input">
-										<input type="text" id="address" class="form-control form-box" placeholder="Tên, vị trí,...">
-										<input type="hidden" name="" id="lat">
-										<input type="hidden" name="" id="lng">
+							<form id="search_form" method="POST">
+								{{csrf_field()}}
+								<div class="col-xs-12 col-sm-12 form-search ">
+									<div class="col-xs-9 col-sm-5">
+										<div class="form-input">
+										<input type="text" id="address" name="address" class="form-control form-box" placeholder="Tên, vị trí,...">
 										<i class="map-maker"></i>
+										</div>
+									</div>
+									<input type="hidden" name="lat" id="lat" value="">
+									<input type="hidden" name="lng" id="lng" value="">
+									<div class="col-sm-2 hidden-xs">
+										<div class="form-input">
+											<input type="text" class="form-control form-box" name="from_time" id="from_time" placeholder="">
+											<i class="calender-o"></i>
+										</div>
+									</div>
+									<div class="col-sm-2 hidden-xs">
+										<div class="form-input">
+											<input type="text" class="form-control form-box" name="to_time" id="to_time" placeholder="">
+											<i class="calender-o"></i>
+										</div>
+									</div>
+									<div class="col-sm-2 hidden-xs">
+										<input type="text" value="" class="form-control" placeholder="1 ngày" />
+									</div>
+									<div class="col-xs-3 col-sm-1">
+										<a href="#" class="hidden-xs">
+											<img src="{{asset('images/search.jpg')}}" alt="" id="search">
+										</a>
+										<a href="#" class="hidden-lg">
+											<img src="{{asset('images/search-xs.jpg')}}" alt="">
+										</a>
 									</div>
 								</div>
-								<div class="col-sm-2 hidden-xs">
-									<div class="form-input">
-										<input type="text" class="form-control form-box" id="from_time" placeholder="">
-										<i class="calender-o"></i>
-									</div>
-								</div>
-								<div class="col-sm-2 hidden-xs">
-									<div class="form-input">
-										<input type="text" class="form-control form-box" id="to_time" placeholder="">
-										<i class="calender-o"></i>
-									</div>
-								</div>
-								<div class="col-sm-2 hidden-xs">
-									<input type="text" value="" class="form-control" placeholder="1 ngày" />
-								</div>
-								<div class="col-xs-3 col-sm-1">
-									<a href="#" class="hidden-xs">
-										<img src="{{asset('images/search.jpg')}}" alt="" id="search">
-									</a>
-									<a href="#" class="hidden-lg">
-										<img src="{{asset('images/search-xs.jpg')}}" alt="">
-									</a>
-								</div>
-							</div>
+							</form>
 							<div class="col-xs-12 col-sm-12 list-hotel">
 								<div class="col-xs-12 col-sm-6 title-xs-12">
 									<h1><span class="glyphicon glyphicon-home hidden-lg"></span> @lang('search/general.nntaikhuvuc'): <span id="search-location"></span></h1>
-									<p class="hidden-xs"><span class="glyphicon glyphicon-home"></span> @lang('search/general.ngay') <span id="date">22/4/2017</span> @lang('search/general.taidayco') <span class="results">{{$data->total()}}</span> @lang('search/general.nnconphong')</p>
+									<p class="hidden-xs"><span class="glyphicon glyphicon-home"></span> @lang('search/general.ngay') <span id="date">{{$ngay}}</span> @lang('search/general.taidayco') <span class="results">{{$data->total()}}</span> @lang('search/general.nnconphong')</p>
 								</div>
 								<div class="col-sm-6 hidden-xs">
 									<div class="form-map">
@@ -381,7 +384,7 @@
 	{
 		document.getElementById("distance").innerHTML=newValue;
 		map_lat = {{$toado[0]}};
-		map_lng = {{$toado[1]}}; 
+		map_lng = {{$toado[1]}};
 		coordinate = map_lat+'-'+map_lng;
 		var range = newValue;
 		$('#range').text(range);
@@ -563,8 +566,11 @@ $('#view-map').on('click',function(event){
 		var lat = $('#lat').val();
 		var lng = $('#lng').val();
 		jQuery.noConflict();
+		// var url = "{{route('searchHotel')}}" + "/" + lat + "-" + lng;
+		// window.location = url;
 		var url = "{{route('searchHotel')}}" + "/" + lat + "-" + lng;
-		window.location = url;
+		$("#search_form").attr('action',url);
+		$('#search_form').submit();
 	});
 	//Pagination
 	$('.pagination a').on('click',function(event) {
