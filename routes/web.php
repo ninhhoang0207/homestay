@@ -11,7 +11,7 @@
 |
 */
 
-
+//===============================================Back-end==============================================
 Auth::routes();
 Route::get('login/facebook', 'SocialAuthController@fbRedirectToProvider')->name('facebookLogin');
 Route::get('login/facebook/callback', 'SocialAuthController@fbHandleProviderCallback');
@@ -52,11 +52,13 @@ Route::get('users-data','AdminUserController@data')->name('usersData');
 Route::get('user-edit/{id}','AdminUserController@edit')->name('userEdit');
 Route::get('user-del/{id}','AdminUserController@delete')->name('userDel');
 Route::post('user-update','AdminUserController@update')->name('userUpdate');
-
+//===============================================Font-end==============================================
 //Home
 Route::get('/','HomesController@index')->name('home');
 Route::post('/','HomesController@searchHotel');
+//Login
 Route::post('sign-in','HomesController@signin')->name('signin');
+//Search
 Route::get('search-hotel/{coordinate?}/{range?}','HomesController@searchHotel')->name('searchHotel');
 Route::post('search-hotel/{coordinate?}/{range?}','HomesController@searchHotel')->name('searchHotel');
 Route::get('find-by-range','HomesController@findByRange')->name('findByRange');
@@ -64,4 +66,9 @@ Route::get('detail','HomesController@detail')->name('detailHotel');
 Route::get('load-images','HomesController@loadImages')->name('loadImages');
 Route::get('view-map','HomesController@viewMap')->name('viewMap');
 // Bookroom
-Route::post('bookroom','BookroomController@bookroomPost')->name('bookroom');
+Route::get('bookroom/{id}','BookroomController@index')->name('bookroom.show');
+Route::post('bookroom/{id}','BookroomController@make_order')->name('bookroom.makeOrder');
+Route::post('bookroom','BookroomController@bookroomPost')->name('bookroom.post');
+Route::get('check-new-booking','BookroomController@check_new_booking')->name('bookroom.checkNewBooking');
+Route::get('bookroom-confirm-delete/{id?}','BookroomController@getModalDelete')->name('bookroom.confirm.delete');
+Route::get('bookroom-delete/{id?}','BookroomController@delete')->name('bookroom.delete');

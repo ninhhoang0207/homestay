@@ -54,23 +54,35 @@
 
                 <div class="col-md-9 col-sm-9 col-xs-12 form-group">
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12"><?php echo app('translator')->getFromJson('hotel/general.sophongdon'); ?> *</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-6"><?php echo app('translator')->getFromJson('hotel/general.sophongdon'); ?> *</label>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
                             <input class="form-control" type="number" min="0" name="singleroom_number" id="singleroom_number">
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12"><?php echo app('translator')->getFromJson('hotel/general.sophongdoi'); ?> *</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                            <input class="form-control" type="number" min="0" name="doubleroom_number" id="doubleroom_number" >
+                        <label class="control-label col-md-3 col-sm-3 col-xs-6"><?php echo app('translator')->getFromJson('hotel/general.dientich'); ?> *</label>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <input class="form-control" type="number" min="0" name="singleroom_square" id="singleroom_square">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12"><?php echo app('translator')->getFromJson('hotel/general.sophongkhac'); ?> *</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-6"><?php echo app('translator')->getFromJson('hotel/general.sophongdoi'); ?> *</label>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <input class="form-control" type="number" min="0" name="doubleroom_number" id="doubleroom_number" >
+                        </div>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-6"><?php echo app('translator')->getFromJson('hotel/general.dientich'); ?> *</label>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <input class="form-control" type="number" min="0" name="doubleroom_square" id="doubleroom_square" >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-6"><?php echo app('translator')->getFromJson('hotel/general.sophongkhac'); ?> *</label>
+                        <div class="ccol-md-3 col-sm-3 col-xs-6">
                             <input class="form-control" type="number" min="0" name="otherroom_number" id="otherroom_number">
+                        </div>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-6"><?php echo app('translator')->getFromJson('hotel/general.dientich'); ?> *</label>
+                        <div class="ccol-md-3 col-sm-3 col-xs-6">
+                            <input class="form-control" type="number" min="0" name="otherroom_square" id="otherroom_square">
                         </div>
                     </div>
                 </div>

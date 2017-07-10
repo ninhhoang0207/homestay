@@ -57,12 +57,12 @@
                                 <a href="<?php echo e(route('hotel.edit',$value->id)); ?>" >
                                     <i class="glyphicon glyphicon-edit"></i> <?php echo app('translator')->getFromJson('general.sua'); ?>
                                 </a>
-                                <a href="<?php echo e(route('hotel.confirm.delete',$value->id)); ?>" data-toggle="modal" data-target = "#delete_confirm">
+                                <a href="<?php echo e(route('hotel.confirm.delete',$value->id)); ?>" class="delete-modal">
                                     <i class="glyphicon glyphicon-remove"></i> <?php echo app('translator')->getFromJson('general.xoa'); ?>
                                 </a>
                                 <br>
                                 <a href="<?php echo e(route('hotel.bookroomList',$value->id)); ?>" >
-                                    <i class="glyphicon glyphicon-th-list"></i> <?php echo app('translator')->getFromJson('hotel/general.dondatphong.tieude'); ?>
+                                    <i class="glyphicon glyphicon-th-list"></i> <?php echo app('translator')->getFromJson('hotel/general.dondatphong.tieude'); ?> <sup><span class="badge bg-green">6</span></sup>
                                 </a>
                             </td>
                             </tr>
@@ -71,14 +71,13 @@
                       </tbody>
                     </table>
                   </div>
-                </div>
+                </div>  
               </div>
             </div>
         </div>
 <div class="modal fade" id="delete_confirm" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
-    </div>
+    <div class="modal-content"></div>
   </div>
 </div>
 <?php $__env->startPush('scripts'); ?>
@@ -97,7 +96,20 @@
     <script src="../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
     <script src="../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
 
-
+    <script type="text/javascript">
+      $('.delete-modal').on('click',function(e) {
+        e.preventDefault();
+        $('#delete_confirm').modal('toggle');
+        var url = $(this).attr('href');
+        $.ajax({
+          url : url
+        }).done(function(data) {
+          $('.modal-content').empty();
+          $('.modal-content').append(data);
+          $('#delete_confirm').modal('show');
+        });
+      });
+    </script>
 <?php $__env->stopPush(); ?>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.blank', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

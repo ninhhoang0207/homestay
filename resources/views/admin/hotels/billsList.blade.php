@@ -23,16 +23,68 @@
     </div>
 
     <div class="clearfix"></div>
-
+    <input type="hidden" name="id" id="id_hotel" value="{{$id}}">
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
                     <h2>{{$hotel_name}} <small></small></h2>
-                <div class="clearfix"></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_title">
+                    <h2 align="center">Đơn đặt phòng mới <small>
+                    <span class="{{$count_new_booking>0?'badge bg-green':"badge"}}" style="color: white" id="count_new_booking">{{$count_new_booking}}
+                    </span></small></h2>
+                    <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
                     <table id="datatable" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>@lang('hotel/general.id')</th>
+                                <th>@lang('hotel/general.ho')</th>
+                                <th>@lang('hotel/general.dondatphong.ten')</th>
+                                <th>@lang('hotel/general.sdt')</th>
+                                <th>@lang('hotel/general.dondatphong.trangthai')</th>
+                                <th>@lang('hotel/general.dondatphong.thoigianden')</th>
+                                <th>@lang('hotel/general.dondatphong.thoigiantra')</th>
+                                <th>@lang('hotel/general.dondatphong.thoigiandangky')</th>
+                                <th>@lang('hotel/general.sophong')</th>
+                                <th>@lang('hotel/general.dondatphong.loaiphong')</th>
+                                <th>@lang('hotel/general.dondatphong.songuoi')</th>
+                                <th>@lang('hotel/general.dondatphong.giatien')</th>
+                                <th>@lang('hotel/general.dondatphong.mauudai')</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($data_new_booking as $key => $value): ?>
+                            <tr>
+                                <td>{{$key+1}}</td>
+                                <td>{{$value->ho}}</td>
+                                <td>{{$value->ten}}</td>
+                                <td>{{$value->sdt}}</td>
+                                <td>{{$status[$value->trangthai]}}</td>
+                                <td>{{$value->thoigianden}}</td>
+                                <td>{{$value->thoigiantra}}</td>
+                                <td>{{$value->thoigiandangky}}</td>
+                                <td>{{$value->sophong}}</td>
+                                <td>{{$value->loaiphong}}</td>
+                                <td>{{$value->songuoi}}</td>
+                                <td>{{$value->giatien}}</td>
+                                <td>{{$value->mauudai}}</td>
+                                <td>{{$value->id}}</td>
+                            </tr>
+                            <?php endforeach ?>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="x_title">
+                    <h2 align="center">Lịch sử đơn đặt phòng </h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <table id="datatable1" class="table table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th>@lang('hotel/general.id')</th>
@@ -67,11 +119,7 @@
                                 <td>{{$value->songuoi}}</td>
                                 <td>{{$value->giatien}}</td>
                                 <td>{{$value->mauudai}}</td>
-                                <td>
-                                <a href="{{route('hotel.confirm.delete',$value->id)}}" data-toggle="modal" data-target = "#details">
-                                        <i class="glyphicon glyphicon-remove"></i> @lang('general.xoa')
-                                    </a>
-                                </td>
+                                <td>{{$value->id}}</td>
                             </tr>
                             <?php endforeach ?>
                         </tbody>
@@ -104,8 +152,101 @@
 <script src="../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
 
 <script type="text/javascript">
-    var dt = $('#datatables').DataTable({
+    var tb_new_booking = $('#datatable').DataTable({
+        "columnDefs": [ {
+            "targets": 13,
+            "render": function ( data, type, full, meta ) {
+                return '<a href="{{route("bookroom.confirm.delete")}}/'+data+'" class="delete-modal"><i class="glyphicon glyphicon-remove"></i> @lang("general.xoa")</a>';
+            }
+        } ]
     });
+    var tb_overtime_booking = $('#datatable1').DataTable({
+        "columnDefs": [ {
+            "targets": 13,
+            "render": function ( data, type, full, meta ) {
+                return '<a href="{{route("bookroom.confirm.delete")}}/'+data+'"class="delete-modal"><i class="glyphicon glyphicon-remove"></i> @lang("general.xoa")</a>';
+            }
+        } ]
+    });
+
+    var checking = setInterval(checkNewBooking, 10000);
+
+    function checkNewBooking() {
+        var id = $('#id_hotel').val(); 
+        $.ajax({
+            url : "{{route('bookroom.checkNewBooking')}}",
+            data : {id:id},
+            type : "GET",
+        }).done(function(data) {
+            $('#count_new_booking').text(data.count_new_booking);
+            tb_new_booking.clear().draw();
+            if (data.count_new_booking > 0) {
+                for (var i = data.new_booking.length - 1; i >= 0; i--) {
+                    var counter = $('#datatable tr:last td:first').text();
+                    counter = parseInt(counter);
+                    tb_new_booking.row.add([
+                        data.new_booking.length - i,
+                        data.new_booking[i].ho,
+                        data.new_booking[i].ten,
+                        data.new_booking[i].sdt,
+                        "{{$status['choxacnhan']}}",
+                        data.new_booking[i].thoigianden,
+                        data.new_booking[i].thoigiantra,
+                        data.new_booking[i].thoigiandangky,
+                        data.new_booking[i].sophong,
+                        data.new_booking[i].loaiphong,
+                        data.new_booking[i].songuoi,
+                        data.new_booking[i].giatien,
+                        data.new_booking[i].uudai==null?'': data.new_booking[i].uudai,
+                        data.new_booking[i].id,
+                        ]).draw(false);
+                }
+                // $('#datatable tbody').append(data.new_booking);
+                // $('#datatable').DataTable().draw(true);
+            }
+
+            if(data.count_new_booking == 0){
+                $('#count_new_booking').removeClass("badge bg-green");
+            } else {
+                 $('#count_new_booking').addClass("badge bg-green");
+            }
+
+            if (data.overtime_booking.length > 0) {
+                    var counter = $('#datatable1 tr:last td:first').text();
+                    counter = parseInt(counter);
+                for (var i = data.overtime_booking.length - 1; i >= 0; i--) {
+                    tb_overtime_booking.row.add([
+                        ++counter,
+                        data.overtime_booking[i].ho,
+                        data.overtime_booking[i].ten,
+                        data.overtime_booking[i].sdt,
+                        data.overtime_booking[i].trangthai,
+                        data.overtime_booking[i].thoigianden,
+                        data.overtime_booking[i].thoigiantra,
+                        data.overtime_booking[i].thoigiandangky,
+                        data.overtime_booking[i].sophong,
+                        data.overtime_booking[i].loaiphong,
+                        data.overtime_booking[i].songuoi,
+                        data.overtime_booking[i].giatien,
+                        data.overtime_booking[i].uudai==null?'': data.overtime_booking[i].uudai,
+                        data.overtime_booking[i].id,
+                        ]).draw(false);
+                }
+            }
+        });    
+    }
+$('.delete-modal').on('click',function(e) {
+    e.preventDefault();
+    $('#details').modal('toggle');
+    var url = $(this).attr('href');
+    $.ajax({
+        url : url
+    }).done(function(data) {
+        $('.modal-content').empty();
+        $('.modal-content').append(data);
+        $('#details').modal('show');
+    });
+});
 </script>
 @endpush
 @endsection

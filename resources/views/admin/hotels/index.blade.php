@@ -58,12 +58,12 @@
                                 <a href="{{route('hotel.edit',$value->id)}}" >
                                     <i class="glyphicon glyphicon-edit"></i> @lang('general.sua')
                                 </a>
-                                <a href="{{route('hotel.confirm.delete',$value->id)}}" data-toggle="modal" data-target = "#delete_confirm">
+                                <a href="{{route('hotel.confirm.delete',$value->id)}}" class="delete-modal">
                                     <i class="glyphicon glyphicon-remove"></i> @lang('general.xoa')
                                 </a>
                                 <br>
                                 <a href="{{route('hotel.bookroomList',$value->id)}}" >
-                                    <i class="glyphicon glyphicon-th-list"></i> @lang('hotel/general.dondatphong.tieude')
+                                    <i class="glyphicon glyphicon-th-list"></i> @lang('hotel/general.dondatphong.tieude') <sup><span class="badge bg-green">6</span></sup>
                                 </a>
                             </td>
                             </tr>
@@ -72,14 +72,13 @@
                       </tbody>
                     </table>
                   </div>
-                </div>
+                </div>  
               </div>
             </div>
         </div>
 <div class="modal fade" id="delete_confirm" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
-    </div>
+    <div class="modal-content"></div>
   </div>
 </div>
 @push('scripts')
@@ -98,6 +97,19 @@
     <script src="../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
     <script src="../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
 
-
+    <script type="text/javascript">
+      $('.delete-modal').on('click',function(e) {
+        e.preventDefault();
+        $('#delete_confirm').modal('toggle');
+        var url = $(this).attr('href');
+        $.ajax({
+          url : url
+        }).done(function(data) {
+          $('.modal-content').empty();
+          $('.modal-content').append(data);
+          $('#delete_confirm').modal('show');
+        });
+      });
+    </script>
 @endpush
 @endsection

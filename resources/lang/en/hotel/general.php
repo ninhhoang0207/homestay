@@ -53,6 +53,8 @@
 		'homsau'			=>	'Hôm sau',
 		'quadem'			=>	'Qua đêm',
 		'theogio'			=>	'Theo giờ',
+		'dientich'			=>	'Diện tích',
+		'trangthaihoatdong'	=>	'Trạng thái hoạt động',
 
 		//
 		'dondatphong'		=>	array(
@@ -71,8 +73,10 @@
 		'trangthai'			=>	array(
 			'choxacnhan'	=>	'Chờ xác nhận',
 			'dangsudung'	=>	'Đang sử dụng',
+			'xacnhan'		=>	'Xác nhận',
 			'dathanhtoan'	=>	'Đã thanh toán',
 			'dahuy'			=>	'Đã hủy',
+			'quathoihan'	=>	'Quá thời hạn',
 			),
 		// Trang chu
 		'trangchu'			=>	array(

@@ -15,6 +15,7 @@ class HomesController extends Controller
 	public function index(Request $request) {
     	
 		$data = DB::table('nha_nghi')
+		->where('nha_nghi.trangthai','like','hoatdong')
 		->join('nhanghi_hinhanh','nhanghi_hinhanh.nn_id','=','nha_nghi.id')
 		->join('nhanghi_giatien','nhanghi_giatien.nn_id','=','nha_nghi.id')
 		->groupBy('nhanghi_giatien.nn_id')
@@ -149,6 +150,7 @@ class HomesController extends Controller
 		$query = "*,round(sqrt(power((ABS(nha_nghi.toado_lat)-".abs($toado_lat)."),2)+power((ABS(nha_nghi.toado_lng)-".abs($toado_lng)."),2))*111,1) as khoangcach";
 		$data = DB::table('nha_nghi')
 		->selectRaw($query)
+		->where('nha_nghi.trangthai','like','hoatdong')
 		->whereRaw("sqrt(power((ABS(nha_nghi.toado_lat)-".abs($toado_lat)."),2)+power((ABS(nha_nghi.toado_lng)-".abs($toado_lng)."),2))*111<".$range)
 		->join('nhanghi_hinhanh','nhanghi_hinhanh.nn_id','=','nha_nghi.id')
 		->groupBy('nhanghi_hinhanh.nn_id')

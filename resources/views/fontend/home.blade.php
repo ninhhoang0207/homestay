@@ -23,15 +23,15 @@
 								<a href=""><span class="glyphicon glyphicon-flag"></span> @lang('hotel/general.diachi'): {{$value->diachi}}</a>
 							</h5>
 							<h5 class="item-text">
-								<a href=""><span class="glyphicon glyphicon-usd"></span> @lang('hotel/general.trangchu.gia'): giờ đầu {{$value->phongdon_motgio}}<small> đ</small>, qua đêm {{$value->phongdon_quadem}}<small> đ</small>, {{$value->phongdon_nhieungay}}<small> đ/Ngày</small></a>
+								<a href=""><span class="glyphicon glyphicon-usd"></span> @lang('hotel/general.trangchu.gia'): @lang('home/general.giodau') {{$value->phongdon_motgio}}<small> đ</small>, @lang('home/general.quadem') {{$value->phongdon_quadem}}<small> đ</small>, {{$value->phongdon_nhieungay}}<small> đ/@lang('home/general.ngay')</small></a>
 							</h5>
 							<div class="col-sm-6">
 								<a href="{{route('detailHotel')}}?hotel_id={{$value->nn_id}}">
-									<input type="button" name="button-view" value="Xem chi tiết" class="btn btn-danger">
+									<input type="button" name="button-view" value="@lang('home/general.xemchitiet')" class="btn btn-danger">
 								</a>
 							</div>
 							<div class="col-sm-6">
-								<input type="button" name="button-book" value="Đặt phòng ngay" class="btn btn-block">
+								<a href="{{route('bookroom.show',['id'=>$value->nn_id])}}" class="btn btn-success">@lang('home/general.datphongngay')</a>
 							</div>
 						</div>
 					</div><!-- end panel -->

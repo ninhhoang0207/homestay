@@ -64,23 +64,35 @@
 
                 <div class="col-md-9 col-sm-9 col-xs-12 form-group">
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12"><?php echo app('translator')->getFromJson('hotel/general.sophongdon'); ?> *</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-6"><?php echo app('translator')->getFromJson('hotel/general.sophongdon'); ?> *</label>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
                             <input class="form-control" type="number" min="0" name="singleroom_number" id="singleroom_number" value="<?php echo e($data->so_phongdon); ?>">
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12"><?php echo app('translator')->getFromJson('hotel/general.sophongdoi'); ?> *</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                            <input class="form-control" type="number" min="0" name="doubleroom_number" id="doubleroom_number" value="<?php echo e($data->so_phongdoi); ?>">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-6"><?php echo app('translator')->getFromJson('hotel/general.dientich'); ?> *</label>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <input class="form-control" type="number" min="0" name="singleroom_square" id="singleroom_square" value="<?php echo e($data->dientich_phongdon); ?>">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12"><?php echo app('translator')->getFromJson('hotel/general.sophongkhac'); ?> *</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-6"><?php echo app('translator')->getFromJson('hotel/general.sophongdoi'); ?> *</label>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <input class="form-control" type="number" min="0" name="doubleroom_number" id="doubleroom_number" value="<?php echo e($data->so_phongdoi); ?>">
+                        </div>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-6"><?php echo app('translator')->getFromJson('hotel/general.dientich'); ?> *</label>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <input class="form-control" type="number" min="0" name="doubleroom_square" id="doubleroom_square" value="<?php echo e($data->dientich_phongdoi); ?>">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-6"><?php echo app('translator')->getFromJson('hotel/general.sophongkhac'); ?> *</label>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
                             <input class="form-control" type="number" min="0" name="otherroom_number" id="otherroom_number" value="<?php echo e($data->so_phongkhac); ?>">
+                        </div>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-6"><?php echo app('translator')->getFromJson('hotel/general.dientich'); ?> *</label>
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <input class="form-control" type="number" min="0" name="otherroom_square" id="otherroom_square" value="<?php echo e($data->dientich_phongkhac); ?>">
                         </div>
                     </div>
                 </div>
@@ -102,6 +114,15 @@
                         <div class="col-md-9 col-sm-9 col-xs-12">
                             <input type="text" class="form-control has-feedback-right" id="single_cal3" placeholder="<?php echo app('translator')->getFromJson('hotel/general.thoihan_dk'); ?>" aria-describedby="inputSuccess2Status" name="end_date" value="<?php echo e($data->thoihan_dk); ?>" data-date-format="DD/MM/YYYY">
                             <span class="fa fa-calendar form-control-feedback right" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-9 col-sm-9 col-xs-12 form-group">
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12"><?php echo app('translator')->getFromJson('hotel/general.trangthaihoatdong'); ?></label>
+                        <div class="col-md-9 con-sm-9 col-xs-12">
+                            <input type="checkbox" class="flat" name="status" id="status" value="<?php echo e($data->trangthai); ?>" <?php echo e($data->trangthai=="hoatdong"?"checked":""); ?>>
                         </div>
                     </div>
                 </div>

@@ -33,23 +33,25 @@ class HotelController extends Controller
         $end_date = date_create($end_date);
         $end_date = date_format($end_date,'Y/m/d');
         $data = array(
-            'ten'           =>  $request->name,
-            'diachi'        =>  $request->address,
-            'toado_lat'     =>  $request->lat,
-            'toado_lng'     =>  $request->lng,
-            'email'         =>  $request->email,
-            'sdt'           =>  $request->phone,
-            'so_phongdon'   =>  $request->singleroom_number,
-            'so_phongdoi'   =>  $request->doubleroom_number,
-            'so_phongkhac'  =>  $request->otherroom_number,     
-            'sotang'        =>  $request->floor_numb,
-            'mota'          =>  $request->description,
-            'ghichu'        =>  $request->note,
-            'thoigian_dk'   =>  date("Y/m/d"),
-            'thoihan_dk'    =>  $end_date,
-            'nguoi_dk_id'   =>  Auth::getUser()->id,
+            'ten'                   =>  $request->name,
+            'diachi'                =>  $request->address,
+            'toado_lat'             =>  $request->lat,
+            'toado_lng'             =>  $request->lng,
+            'email'                 =>  $request->email,
+            'sdt'                   =>  $request->phone,
+            'so_phongdon'           =>  $request->singleroom_number,
+            'so_phongdoi'           =>  $request->doubleroom_number,
+            'so_phongkhac'          =>  $request->otherroom_number,
+            'dientich_phongdon'     =>  $request->singleroom_square,
+            'dientich_phongdoi'     =>  $request->doubleroom_square,
+            'dientich_phongkhac'    =>  $request->otherroom_square,
+            'sotang'                =>  $request->floor_numb,
+            'mota'                  =>  $request->description,
+            'ghichu'                =>  $request->note,
+            'thoigian_dk'           =>  date("Y/m/d"),
+            'thoihan_dk'            =>  $end_date,
+            'nguoi_dk_id'           =>  Auth::getUser()->id,
             );
-       
         $insert = DB::table('nha_nghi')->insert($data);
         $id = DB::getPdo()->lastInsertId();
         //Services
@@ -168,21 +170,25 @@ class HotelController extends Controller
         $end_date = $request->end_date;
         $end_date = date_create($end_date);
         $end_date = date_format($end_date,'Y/m/d');
-
+        $status = isset($request->status)?$request->status:"khonghoatdong";
         $data = array(
-            'ten'           =>  $request->name,
-            'diachi'        =>  $request->address,
-            'toado_lat'     =>  $request->lat,
-            'toado_lng'     =>  $request->lng,
-            'email'         =>  $request->email,
-            'sdt'           =>  $request->phone,
-            'so_phongdon'   =>  $request->singleroom_number,
-            'so_phongdoi'   =>  $request->doubleroom_number,
-            'so_phongkhac'  =>  $request->otherroom_number,     
-            'sotang'        =>  $request->floor_numb,
-            'mota'          =>  $request->description,
-            'ghichu'        =>  $request->note,
-            'thoihan_dk'    =>  $end_date,
+            'ten'                   =>  $request->name,
+            'diachi'                =>  $request->address,
+            'toado_lat'             =>  $request->lat,
+            'toado_lng'             =>  $request->lng,
+            'email'                 =>  $request->email,
+            'sdt'                   =>  $request->phone,
+            'so_phongdon'           =>  $request->singleroom_number,
+            'so_phongdoi'           =>  $request->doubleroom_number,
+            'so_phongkhac'          =>  $request->otherroom_number,
+            'dientich_phongdon'     =>  $request->singleroom_square,
+            'dientich_phongdoi'     =>  $request->doubleroom_square,
+            'dientich_phongkhac'    =>  $request->otherroom_square,
+            'sotang'                =>  $request->floor_numb,
+            'mota'                  =>  $request->description,
+            'ghichu'                =>  $request->note,
+            'thoihan_dk'            =>  $end_date,
+            'trangthai'             =>  $status,
             );
        
         $update = DB::table('nha_nghi')->where('id',$id)->update($data);
@@ -346,14 +352,40 @@ class HotelController extends Controller
 
     // Danh sach hoa don dat phong
     public function bookroomList($id){
-        $data = DB::table('hoadon')->where('nn_id',$id)->get();
+        $now = date_create();
+        $now = date_format($now,'Y-m-d H:i:s');
+        $data_new_booking = DB::table('hoadon')
+        ->selectRaw("*,TIMESTAMPDIFF(MINUTE,thoigiandangky,'".$now."') as min_diff")
+        ->where('nn_id',$id)
+        ->where('trangthai','like','choxacnhan')
+        ->whereRaw("TIMESTAMPDIFF(MINUTE,thoigiandangky,'".$now."') < 15")
+        ->orderBy('thoigiandangky')
+        ->get()
+        ->toArray();
+
+         $update = DB::table('hoadon')
+        ->where('nn_id',$id)
+        ->where('trangthai','choxacnhan')
+        ->whereRaw("TIMESTAMPDIFF(MINUTE,thoigiandangky,'".$now."') > 15")
+        ->update(['trangthai'=>'quathoihan']);
+
+        $data = DB::table('hoadon')
+        ->where('nn_id',$id)
+        ->where('trangthai','<>','choxacnhan')
+        ->orderBy('thoigiandangky')
+        ->get();
+
         $hotel_name = DB::table('nha_nghi')->select('ten')->where('id',$id)->first();
         $status = Lang::get('hotel/general.trangthai');
+
         if(isset($hotel_name)) $hotel_name = $hotel_name->ten;
         return view('admin.hotels.billsList')->with([
-                'data'      =>  $data,
-                'hotel_name'=>  $hotel_name,
-                'status'    =>  $status,
+                'id'                =>  $id,
+                'data'              =>  $data,
+                'data_new_booking'  =>  $data_new_booking,
+                'hotel_name'        =>  $hotel_name,
+                'status'            =>  $status,
+                'count_new_booking' =>  count($data_new_booking)
             ]);
     }
 
