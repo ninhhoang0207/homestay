@@ -8,9 +8,13 @@ use DateTime;
 use DB;
 use Redirect;
 use Lang;
+use Auth;
 
 class BookroomController extends Controller
 {
+    public function __construct() {
+        $this->middleware('auth');
+    }
     //
     public function index($id=-1) {
         $data = DB::table('nha_nghi')->select('id','ten','diachi')->where('id',$id)->first();
@@ -27,6 +31,10 @@ class BookroomController extends Controller
         $from_time = $this->date_format($request->from_time);
         $to_time = $this->date_format($request->to_time);
         $temp=$this->totalPrice($request->from_time,$request->to_time,$request->room_type,$id);
+        $totalPrice =  $this->totalPrice($request->from_time,$request->to_time,$request->room_type,$id);
+        $using_time = $totalPrice['thoigian_sudung']['gio']
+                        .'-'.$totalPrice['thoigian_sudung']['dem']
+                        .'-'.$totalPrice['thoigian_sudung']['ngay'];
         $data = array(
             'nn_id'         =>  $id,
             'ho'            =>  $request->last_name,
@@ -39,7 +47,9 @@ class BookroomController extends Controller
             'sophong'       =>  $request->room_quantity,
             'songuoi'       =>  $request->guest_quantity,
             'thoigiandangky'=>  $registion_time,
-            'giatien'       =>  $this->totalPrice($request->from_time,$request->to_time,$request->room_type,$id)['tongtien'],
+            'nguoidung_id'  =>  Auth::user()->id,
+            'giatien'       =>  $totalPrice['tongtien'],
+            'thoigiansudung'=>  $using_time,
         );
         
         DB::table('hoadon')->insert($data);
@@ -95,28 +105,28 @@ class BookroomController extends Controller
             );
     }
 
-    public function bookroomPost(Request $request){
-    	$thoigianden = $this->convertTime($request->thoigianden);
-    	$thoigiantra = $this->convertTime($request->thoigiantra);
+    // public function bookroomPost(Request $request){
+    // 	$thoigianden = $this->convertTime($request->thoigianden);
+    // 	$thoigiantra = $this->convertTime($request->thoigiantra);
 
-    	$data = array(
-                'nn_id'         =>  $request->nn_id,
-    			'ho'			=>	$request->ho,
-    			'ten'			=>	$request->ten,
-    			'sdt'			=>	$request->sdt,
-    			'thoigianden'	=>	$thoigianden,
-    			'thoigiantra'	=>	$thoigiantra,
-    			'sophong'		=>	$request->sophong,
-    			'songuoi'		=>	$request->songuoi,
-    			'loaiphong'		=>	$request->loaiphong,
-    			'mauudai'		=>	$request->mauudai,
-    			'giatien'		=>	$this->totalPrice($request->thoigianden,$request->thoigiantra,$request->loaiphong,60),
-                'trangthai'     =>  'choxacnhan',
-                'thoigiandangky'=>  date_create(),
-    		);
+    // 	$data = array(
+    //             'nn_id'         =>  $request->nn_id,
+    // 			'ho'			=>	$request->ho,
+    // 			'ten'			=>	$request->ten,
+    // 			'sdt'			=>	$request->sdt,
+    // 			'thoigianden'	=>	$thoigianden,
+    // 			'thoigiantra'	=>	$thoigiantra,
+    // 			'sophong'		=>	$request->sophong,
+    // 			'songuoi'		=>	$request->songuoi,
+    // 			'loaiphong'		=>	$request->loaiphong,
+    // 			'mauudai'		=>	$request->mauudai,
+    // 			'giatien'		=>	$this->totalPrice($request->thoigianden,$request->thoigiantra,$request->loaiphong,60),
+    //             'trangthai'     =>  'choxacnhan',
+    //             'thoigiandangky'=>  date_create(),
+    // 		);
 
-    	DB::table('hoadon')->insert($data);
-    }
+    // 	DB::table('hoadon')->insert($data);
+    // }
 
     protected function convertTime($data){
     	$data = explode(" ", $data);

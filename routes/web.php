@@ -72,3 +72,8 @@ Route::post('bookroom','BookroomController@bookroomPost')->name('bookroom.post')
 Route::get('check-new-booking','BookroomController@check_new_booking')->name('bookroom.checkNewBooking');
 Route::get('bookroom-confirm-delete/{id?}','BookroomController@getModalDelete')->name('bookroom.confirm.delete');
 Route::get('bookroom-delete/{id?}','BookroomController@delete')->name('bookroom.delete');
+//User detail
+Route::group(['prefix'=>'user'],function() {
+	Route::get('bookroom-history','UserController@bookroom_history')->name('user.bookroomHistory');
+	Route::get('bookroom-history-data','UserController@getDataFromBookroomHistory')->name('user.getDataBookroomHistory');
+});

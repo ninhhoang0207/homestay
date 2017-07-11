@@ -56,6 +56,11 @@
 		'dientich'			=>	'Diện tích',
 		'trangthaihoatdong'	=>	'Trạng thái hoạt động',
 
+		'kieuphong'			=> 	array(
+				'phongdon'	=>	'Phòng đơn',
+				'phongdoi'	=>	'Phòng đôi',
+				'phongkhac'	=>	'Phòng khác',
+			),
 		//
 		'dondatphong'		=>	array(
 			'tieude'		=>	'Đơn đặt phòng',

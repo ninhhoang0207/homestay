@@ -17,7 +17,7 @@
 						<div class="label label-success price"><span class="glyphicon glyphicon-usd"></span> -10%</div>
 						<div class="col-sm-7 feature">
 							<h3 class="title-text">
-								<a href="{{route('detailHotel')}}?hotel_id={{$value->nn_id}}">{{$value->ten}}</a>
+								<a href="{{route('detailHotel')}}?hotel_id={{$value->nn_id}}" target="_blank">{{$value->ten}}</a>
 							</h3>
 							<h5 class="item-text">
 								<a href=""><span class="glyphicon glyphicon-flag"></span> @lang('hotel/general.diachi'): {{$value->diachi}}</a>
@@ -26,7 +26,7 @@
 								<a href=""><span class="glyphicon glyphicon-usd"></span> @lang('hotel/general.trangchu.gia'): @lang('home/general.giodau') {{$value->phongdon_motgio}}<small> đ</small>, @lang('home/general.quadem') {{$value->phongdon_quadem}}<small> đ</small>, {{$value->phongdon_nhieungay}}<small> đ/@lang('home/general.ngay')</small></a>
 							</h5>
 							<div class="col-sm-6">
-								<a href="{{route('detailHotel')}}?hotel_id={{$value->nn_id}}">
+								<a href="{{route('detailHotel')}}?hotel_id={{$value->nn_id}}" target="_blank">
 									<input type="button" name="button-view" value="@lang('home/general.xemchitiet')" class="btn btn-danger">
 								</a>
 							</div>
