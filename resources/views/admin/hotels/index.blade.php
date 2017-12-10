@@ -19,7 +19,6 @@
               <div class="title_left">
                 <h3>@lang('hotel/general.tieude')<small></small></h3>
               </div>
-
             </div>
 
             <div class="clearfix"></div>
@@ -29,6 +28,7 @@
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>@lang('hotel/general.danhmuc') <small></small></h2>
+                    <div class="nav navbar-right"><a href="{{route('hotel.register')}}" class="btn btn-success">Đăng ký nhà nghỉ <span class="glyphicon glyphicon-pencil" style="color:white"></span></a></div>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -52,8 +52,8 @@
                             <td>{{$value->ten}}</td>
                             <td>{{$value->diachi}}</td>
                             <td>{{$value->sdt}}</td>
-                            <td>{{$value->thoigian_dk}}</td>
-                            <td>{{$value->thoihan_dk}}</td>
+                            <td>{{Carbon\Carbon::parse($value->thoigian_dk)->format('d/m/Y')}}</td>
+                            <td>{{Carbon\Carbon::parse($value->thoihan_dk)->format('d/m/Y')}}</td>
                             <td width="15%">
                                 <a href="{{route('hotel.edit',$value->id)}}" >
                                     <i class="glyphicon glyphicon-edit"></i> @lang('general.sua')
@@ -63,7 +63,8 @@
                                 </a>
                                 <br>
                                 <a href="{{route('hotel.bookroomList',$value->id)}}" >
-                                    <i class="glyphicon glyphicon-th-list"></i> @lang('hotel/general.dondatphong.tieude') <sup><span class="badge bg-green">6</span></sup>
+                                <i class="glyphicon glyphicon-th-list"></i> @lang('hotel/general.dondatphong.tieude') <span class="{{$value->new_booking>0?'badge bg-green':'badge'}}" style="color: white" id="count_new_booking">{{$value->new_booking}}
+                                </span>
                                 </a>
                             </td>
                             </tr>

@@ -105,28 +105,6 @@ class BookroomController extends Controller
             );
     }
 
-    // public function bookroomPost(Request $request){
-    // 	$thoigianden = $this->convertTime($request->thoigianden);
-    // 	$thoigiantra = $this->convertTime($request->thoigiantra);
-
-    // 	$data = array(
-    //             'nn_id'         =>  $request->nn_id,
-    // 			'ho'			=>	$request->ho,
-    // 			'ten'			=>	$request->ten,
-    // 			'sdt'			=>	$request->sdt,
-    // 			'thoigianden'	=>	$thoigianden,
-    // 			'thoigiantra'	=>	$thoigiantra,
-    // 			'sophong'		=>	$request->sophong,
-    // 			'songuoi'		=>	$request->songuoi,
-    // 			'loaiphong'		=>	$request->loaiphong,
-    // 			'mauudai'		=>	$request->mauudai,
-    // 			'giatien'		=>	$this->totalPrice($request->thoigianden,$request->thoigiantra,$request->loaiphong,60),
-    //             'trangthai'     =>  'choxacnhan',
-    //             'thoigiandangky'=>  date_create(),
-    // 		);
-
-    // 	DB::table('hoadon')->insert($data);
-    // }
 
     protected function convertTime($data){
     	$data = explode(" ", $data);

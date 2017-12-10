@@ -547,6 +547,9 @@ $('#register-form').validate({
         singleroom_number : "required",
         doubleroom_number : "required",
         otherroom_number  : "required",
+        singleroom_square : "required",
+        doubleroom_square : "required",
+        otherroom_square  : "required",
 
         'singleroom_price[0]' : "required",
         'doubleroom_price[0]' : "required",
@@ -580,6 +583,9 @@ $('#register-form').validate({
         singleroom_number : "<?php echo e(Lang::get('val.message')); ?>",
         doubleroom_number : "<?php echo e(Lang::get('val.message')); ?>",
         otherroom_number  : "<?php echo e(Lang::get('val.message')); ?>",
+        singleroom_square : "<?php echo e(Lang::get('val.message')); ?>",
+        doubleroom_square : "<?php echo e(Lang::get('val.message')); ?>",
+        otherroom_square  : "<?php echo e(Lang::get('val.message')); ?>",
 
         'singleroom_price[0]' : "<?php echo e(Lang::get('val.message')); ?>",
         'doubleroom_price[0]' : "<?php echo e(Lang::get('val.message')); ?>",

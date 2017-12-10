@@ -19,7 +19,25 @@ class HotelController extends Controller
         $this->middleware('auth');
     }
     public function index(){
-        $data = DB::table('nha_nghi')->get();
+        $data = DB::table('nha_nghi')
+        ->get();
+        // $bills = DB::table('hoadon')->get();
+        $now = date_create();
+        $now = date_format($now,'Y-m-d H:i:s');
+        $data_new_booking = DB::table('hoadon')
+        ->selectRaw("*,TIMESTAMPDIFF(MINUTE,thoigiandangky,'".$now."') as min_diff")
+        ->where('nguoidung_id',Auth::user()->id)
+        ->where('trangthai','like','choxacnhan')
+        ->whereRaw("TIMESTAMPDIFF(MINUTE,thoigiandangky,'".$now."') < 15")
+        ->orderBy('thoigiandangky')
+        ->get();
+        foreach ($data as $key => $value) {
+            $value->new_booking = isset($value->new_booking)?$value->new_booking:0;
+            foreach ($data_new_booking as $bill) {
+                if ($value->id == $bill->nn_id)
+                    $value->new_booking++;
+            }
+        }
     	return view('admin.hotels.index',compact('data'));
     }
 
@@ -147,13 +165,6 @@ class HotelController extends Controller
         $hotel_services = DB::table('nhanghi_dichvu')->where('nn_id',$id)->get();
         if (isset($services)) {
             $servicesdata = explode(',', $hotel_services[0]->dichvu);
-            // foreach ($services as $key => $value) {
-            //     $services[$key]->checked = "";
-            //     foreach ($hotel_services as $key1 => $value1) {
-            //         if($services[$key]->id == $value1->dichvu_id )
-            //             $services[$key]->checked = "checked";
-            //     }
-            // }
             foreach ($services as $key => $value) {
                 $services[$key]->checked = "";
                 foreach ($servicesdata as $key1 => $value1) {

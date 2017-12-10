@@ -1,0 +1,1071 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"searc",
+				"search-order"
+			],
+			[
+				"pick",
+				"pickup-place"
+			],
+			[
+				"pickup",
+				"pickup_place"
+			],
+			[
+				"form-",
+				"form-order"
+			],
+			[
+				"btn",
+				"btn-reset"
+			],
+			[
+				"bt",
+				"btn-reset"
+			],
+			[
+				"fa",
+				"farewell"
+			],
+			[
+				"form",
+				"form\tTag"
+			],
+			[
+				"col-md",
+				"col-md-6"
+			],
+			[
+				"col-",
+				"col-md-12"
+			],
+			[
+				"col",
+				"col-sm-3"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
+				"new",
+				"new-order"
+			],
+			[
+				"user_can",
+				"user_can_delete_own_post"
+			],
+			[
+				"reac",
+				"reaction_vote_count"
+			],
+			[
+				"reca",
+				"reaction-vote-count"
+			],
+			[
+				"autoedi",
+				"auto_approve_edited_posts"
+			],
+			[
+				"mail",
+				"mail_driver"
+			],
+			[
+				"im",
+				"image"
+			],
+			[
+				"pos",
+				"post_id"
+			],
+			[
+				"relate",
+				"related_post"
+			],
+			[
+				"rela",
+				"related-status"
+			],
+			[
+				"rel",
+				"related-status"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"cate",
+				"category_list"
+			],
+			[
+				"ima",
+				"image_name"
+			],
+			[
+				"related",
+				"related_title"
+			],
+			[
+				"btn-",
+				"btn-primary"
+			],
+			[
+				"categ",
+				"categories"
+			],
+			[
+				"route",
+				"router"
+			],
+			[
+				"exi",
+				"exists"
+			],
+			[
+				"curr",
+				"current_folder"
+			],
+			[
+				"unive",
+				"university_count"
+			],
+			[
+				"course-s",
+				"course-statistic"
+			],
+			[
+				"univ",
+				"university"
+			],
+			[
+				"gui",
+				"guide_category"
+			],
+			[
+				"app",
+				"apply"
+			],
+			[
+				"comp",
+				"compare"
+			],
+			[
+				"uni",
+				"university"
+			],
+			[
+				"univer",
+				"university_pathway_id"
+			],
+			[
+				"select",
+				"select\tTag"
+			],
+			[
+				"desc",
+				"description_en"
+			],
+			[
+				"search",
+				"searchCourse"
+			],
+			[
+				"key",
+				"keyword"
+			],
+			[
+				"sear",
+				"course-search"
+			],
+			[
+				"quan",
+				"quantity_en"
+			],
+			[
+				"course",
+				"courses"
+			],
+			[
+				"hide",
+				"hidden"
+			],
+			[
+				"remove",
+				"removeClass"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"margi",
+				"margin-bottom"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"subj",
+				"subject"
+			],
+			[
+				"sbu",
+				"subjects"
+			],
+			[
+				"sig",
+				"sign_up_perks_field"
+			],
+			[
+				"fai",
+				"fair_introduce_field"
+			],
+			[
+				"fair",
+				"fair-introduce"
+			],
+			[
+				"stud",
+				"studying_field"
+			],
+			[
+				"cure",
+				"current_qualification"
+			],
+			[
+				"cu",
+				"current_qualification"
+			],
+			[
+				"sele",
+				"select"
+			],
+			[
+				"exp",
+				"explode"
+			],
+			[
+				"text",
+				"textarea"
+			],
+			[
+				"mt",
+				"my-editor"
+			],
+			[
+				"a",
+				"a\tTag"
+			],
+			[
+				"Fa",
+				"FairRegister"
+			],
+			[
+				"send",
+				"send_mail"
+			],
+			[
+				"personal",
+				"personal_details"
+			],
+			[
+				"nat",
+				"nationality"
+			],
+			[
+				"que",
+				"Question"
+			],
+			[
+				"repl",
+				"reply-content"
+			],
+			[
+				"re",
+				"reply-content"
+			],
+			[
+				"Co",
+				"ContactEmail"
+			],
+			[
+				"Menu",
+				"MenuUniversity"
+			],
+			[
+				"link",
+				"link_"
+			],
+			[
+				"sel",
+				"selectpicker"
+			],
+			[
+				"get",
+				"getCountry"
+			],
+			[
+				"fre",
+				"frequently"
+			],
+			[
+				"ph",
+				"php\t<?php … ?>"
+			],
+			[
+				"freq",
+				"frequent_visited_subject_ids"
+			],
+			[
+				"frequ",
+				"frequent_visted_subject"
+			],
+			[
+				"subjids",
+				"subject_ids"
+			],
+			[
+				"subjedi",
+				"subject_ids"
+			],
+			[
+				"suj",
+				"subject_frequently_visited"
+			],
+			[
+				"subjid",
+				"subject_ids"
+			],
+			[
+				"cour",
+				"course"
+			],
+			[
+				"count",
+				"count"
+			],
+			[
+				"comfi",
+				"comfirm-submit"
+			],
+			[
+				"review",
+				"review_status"
+			],
+			[
+				"R",
+				"Redirect"
+			],
+			[
+				"hid",
+				"hidden"
+			],
+			[
+				"list",
+				"list-apply"
+			],
+			[
+				"free",
+				"free_consultation"
+			],
+			[
+				"apply",
+				"apply_course_id"
+			],
+			[
+				"App",
+				"ApplyCoursePersonalDetail"
+			],
+			[
+				"contry",
+				"country_birth"
+			],
+			[
+				"qu",
+				"qualification"
+			],
+			[
+				"na",
+				"nationality"
+			],
+			[
+				"country",
+				"countryBirth"
+			],
+			[
+				"submi",
+				"submit_status"
+			],
+			[
+				"outco",
+				"outcome_status"
+			],
+			[
+				"rece",
+				"receive_status"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"fil",
+				"files"
+			],
+			[
+				"form-ap",
+				"form-apply-3"
+			],
+			[
+				"form-app",
+				"form-apply-2"
+			],
+			[
+				"drop",
+				"dropzone"
+			],
+			[
+				"qual",
+				"edu_qualification"
+			],
+			[
+				"iss",
+				"isset"
+			],
+			[
+				"personalDetail",
+				"ApplyCoursePersonalDetail"
+			],
+			[
+				"Profie",
+				"ApplyCourseEnglishProficiency"
+			],
+			[
+				"w",
+				"work"
+			],
+			[
+				"ce",
+				"certificate"
+			],
+			[
+				"AppcouE",
+				"ApplyCourseWorkExperience"
+			],
+			[
+				"empl",
+				"employer_name"
+			],
+			[
+				"edu",
+				"edu_end"
+			],
+			[
+				"edu_",
+				"edu_start"
+			],
+			[
+				"ap",
+				"append"
+			],
+			[
+				"disa",
+				"disabled"
+			],
+			[
+				"crim",
+				"criminal_record"
+			],
+			[
+				"person",
+				"personal_details"
+			],
+			[
+				"isse",
+				"is_self_funded"
+			],
+			[
+				"step_2",
+				"step_2_header"
+			],
+			[
+				"conti",
+				"continue-apply"
+			],
+			[
+				"cou",
+				"course"
+			],
+			[
+				"arram",
+				"array_merge"
+			],
+			[
+				"coun",
+				"country"
+			],
+			[
+				"cor",
+				"course"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": ".env",
+			"settings":
+			{
+				"buffer_size": 825,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/ninhv/Desktop/garo-estate-gh-pages/index-5.html",
+			"settings":
+			{
+				"buffer_size": 55016,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/homepage/index.blade.php",
+			"settings":
+			{
+				"buffer_size": 55514,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "index.blade.php"
+			}
+		},
+		{
+			"file": "routes/web.php",
+			"settings":
+			{
+				"buffer_size": 4921,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "Format",
+		"selected_items":
+		[
+			[
+				"Format",
+				"CodeFormatter: Format Code"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"packet ",
+				"Package Control: List Packages"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 444.0
+	},
+	"console":
+	{
+		"height": 58.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/WEB/bookroom_project/dat_phong",
+		"/D/WEB/bookroom_project/dat_phong/app",
+		"/D/WEB/bookroom_project/dat_phong/resources",
+		"/D/WEB/bookroom_project/dat_phong/resources/views",
+		"/D/WEB/bookroom_project/dat_phong/resources/views/homepage",
+		"/D/WEB/bookroom_project/dat_phong/routes"
+	],
+	"file_history":
+	[
+		"/D/WEB/tapxi/resources/views/homepage/edit_profile.blade.php",
+		"/D/WEB/tapxi/resources/views/admin/user/edit.blade.php",
+		"/D/WEB/tapxi/public/css/app.css",
+		"/D/WEB/tapxi/resources/views/layouts/app.blade.php",
+		"/D/WEB/tapxi/config/mail.php",
+		"/D/WEB/tapxi/resources/views/templates/admin.blade.php",
+		"/D/WEB/tapxi/app/Http/Controllers/Admin/CategoryController.php",
+		"/D/WEB/tapxi/app/Http/Controllers/EmailController.php",
+		"/D/WEB/tapxi/resources/views/homepage/list_car.blade.php",
+		"/D/WEB/tapxi/app/Providers/CustomMailServiceProvider.php",
+		"/D/WEB/tapxi/.env",
+		"/D/WEB/tapxi/config/app.php",
+		"/D/WEB/tapxi/composer.json",
+		"/D/WEB/tapxi/resources/views/admin/setting/general.blade.php",
+		"/D/WEB/tapxi/app/User.php",
+		"/D/WEB/tapxi/app/Customs/CustomTransportManager.php",
+		"/D/WEB/tapxi/vendor/laravel/framework/src/Illuminate/Mail/MailServiceProvider.php",
+		"/D/WEB/tapxi/app/Http/Controllers/Admin/PostController.php",
+		"/D/WEB/tapxi/resources/views/includes/admin/sidebar_menu.blade.php",
+		"/D/WEB/tapxi/app/Models/Category.php",
+		"/D/WEB/tapxi/app/Models/RelatedPost.php",
+		"/D/WEB/tapxi/app/Models/Post.php",
+		"/D/WEB/tapxi/database/migrations/2017_12_04_040632_create_related_posts_table.php",
+		"/D/WEB/tapxi/resources/views/admin/setting/social_media.blade.php",
+		"/D/WEB/tapxi/database/migrations/2017_12_04_035910_create_posts_table.php",
+		"/D/WEB/tapxi/resources/views/admin/post/create.blade.php",
+		"/D/WEB/tapxi/resources/views/admin/setting/other.blade.php",
+		"/D/WEB/tapxi/resources/views/admin/setting/mail.blade.php",
+		"/D/WEB/tapxi/database/migrations/2017_12_04_040446_create_categories_table.php",
+		"/D/WEB/tapxi/app/Http/Controllers/Auth/LoginController.php",
+		"/D/WEB/tapxi/app/Http/Controllers/Admin/SettingController.php",
+		"/D/WEB/tapxi/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/D/WEB/tapxi/database/seeds/UsersTableSeeder.php",
+		"/D/WEB/article/resources/views/admin/post/create.blade.php",
+		"/D/WEB/article/database/seeds/DatabaseSeeder.php",
+		"/D/WEB/article/resources/views/admin/post/index.blade.php",
+		"/D/WEB/article/.gitignore",
+		"/D/WEB/article/resources/views/templates/admin.blade.php",
+		"/D/WEB/article/database/migrations/2017_11_27_094526_create_categories_table.php",
+		"/D/WEB/article/database/seeds/UsersTableSeeder.php",
+		"/D/WEB/article/public/css/dataTables.bootstrap.css",
+		"/D/WEB/article/public/js/admin.js",
+		"/D/WEB/article/public/css/dataTables.min.css",
+		"/D/WEB/article/resources/views/includes/admin/sidebar_menu.blade.php",
+		"/D/WEB/article/app/Models/Category.php",
+		"/D/WEB/article/app/Models/RelatedPost.php",
+		"/D/WEB/article/resources/views/admin/category/index.blade.php",
+		"/D/WEB/article/database/migrations/2017_11_27_094655_create_related_posts_table.php",
+		"/D/WEB/article/public/build/js/custom.js",
+		"/D/WEB/article/app/Http/Controllers/Admin/CategoryController.php",
+		"/D/WEB/article/resources/views/admin/category/create.blade.php",
+		"/D/WEB/article/resources/views/admin/category/edit.blade.php",
+		"/D/WEB/article/database/migrations/2014_10_12_000000_create_users_table.php",
+		"/D/WEB/article/database/migrations/2017_11_27_094112_create_posts_table.php",
+		"/D/WEB/article/app/Providers/AppServiceProvider.php",
+		"/D/WEB/article/app/Http/Controllers/Admin/PostController.php",
+		"/D/WEB/article/.env",
+		"/D/WEB/article/config/app.php",
+		"/D/WEB/laravel5.5/public/tags/src/tagsinput.js",
+		"/D/WEB/bookroom_project/template/gentelella-master/production/form.html",
+		"/D/WEB/laravel5.5/resources/views/html/form.blade.php",
+		"/D/WEB/bookroom_project/template/gentelella-master/build/js/custom.js",
+		"/D/WEB/dangkyduhoc/resources/views/layouts/admin.blade.php",
+		"/D/WEB/dangkyduhoc/app/Http/Controllers/User/GuideController.php",
+		"/D/WEB/dangkyduhoc/config/translation-manager.php",
+		"/D/WEB/dangkyduhoc/routes/web.php",
+		"/D/WEB/dangkyduhoc/vendor/barryvdh/laravel-translation-manager/src/ManagerServiceProvider.php",
+		"/D/WEB/dangkyduhoc/resources/views/user/homepage.blade.php",
+		"/D/WEB/dangkyduhoc/vendor/barryvdh/laravel-translation-manager/src/Controller.php",
+		"/D/WEB/dangkyduhoc/resources/views/vendor/translation-manager/index.php",
+		"/D/WEB/dangkyduhoc/composer.json",
+		"/D/WEB/dangkyduhoc/resources/lang/en/auth.php",
+		"/D/WEB/dangkyduhoc/config/app.php",
+		"/D/WEB/dangkyduhoc/vendor/barryvdh/laravel-translation-manager/config/translation-manager.php",
+		"/D/WEB/dangkyduhoc/storage/logs/laravel.log",
+		"/D/WEB/dangkyduhoc/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php",
+		"/D/WEB/dangkyduhoc/app/Http/Controllers/Language/LanguageController.php",
+		"/D/WEB/dangkyduhoc/resources/views/lang/index.blade.php",
+		"/D/WEB/dangkyduhoc/bootstrap/cache/config.php",
+		"/D/WEB/dangkyduhoc/composer.lock",
+		"/D/WEB/dangkyduhoc/.env",
+		"/D/WEB/dangkyduhoc/config/translator.php",
+		"/D/WEB/dangkyduhoc/vendor/composer/installed.json",
+		"/D/WEB/dangkyduhoc/app/Http/Controllers/Admin/ContactController.php",
+		"/D/WEB/dangkyduhoc/app/Http/Controllers/User/CareerController.php",
+		"/D/WEB/dangkyduhoc/resources/views/user/careers.blade.php",
+		"/D/WEB/dangkyduhoc/resources/views/user/universities.blade.php",
+		"/D/WEB/dangkyduhoc/app/Http/Controllers/User/UniversityController.php",
+		"/D/WEB/dangkyduhoc/app/Http/Controllers/User/AjaxController.php",
+		"/D/WEB/dangkyduhoc/resources/views/ajax/filterCourse.blade.php",
+		"/D/WEB/dangkyduhoc/public/js/custom.js",
+		"/D/WEB/dangkyduhoc/resources/views/ajax/filterSubject.blade.php",
+		"/D/WEB/dangkyduhoc/app/Http/Controllers/User/SubjectController.php",
+		"/D/WEB/dangkyduhoc/resources/views/user/subjects.blade.php",
+		"/D/WEB/dangkyduhoc/resources/views/ajax/similarCourse.blade.php",
+		"/D/WEB/dangkyduhoc/resources/lang/en/home.php",
+		"/D/WEB/dangkyduhoc/resources/views/layouts/app.blade.php",
+		"/D/WEB/dangkyduhoc/resources/views/admin/fair/index_register.blade.php",
+		"/D/WEB/dangkyduhoc/app/Http/Controllers/Admin/CareerController.php",
+		"/D/WEB/dangkyduhoc/resources/views/user/guide-detail.blade.php",
+		"/D/WEB/dangkyduhoc/resources/views/user/guide-list.blade.php",
+		"/D/WEB/dangkyduhoc/storage/framework/views/b01414ffebfe171839881c20a58993849643085a.php",
+		"/D/WEB/dangkyduhoc/resources/views/includes/user/apply_course.blade.php",
+		"/D/WEB/dangkyduhoc/app/Http/Controllers/Admin/PathwayController.php",
+		"/D/WEB/dangkyduhoc/resources/views/user/apply.blade.php",
+		"/D/WEB/dangkyduhoc/resources/views/admin/pathway/index.blade.php",
+		"/D/WEB/dangkyduhoc/resources/views/layouts/footer.blade.php",
+		"/D/WEB/dangkyduhoc/resources/views/admin/pathway/edit.blade.php",
+		"/D/WEB/dangkyduhoc/app/Models/Pathway.php",
+		"/D/WEB/dangkyduhoc/app/Http/Controllers/Admin/MenuController.php",
+		"/D/WEB/dangkyduhoc/resources/views/admin/menu/index.blade.php",
+		"/D/WEB/dangkyduhoc/app/Http/Controllers/Admin/UniversityController.php",
+		"/D/WEB/dangkyduhoc/resources/views/admin/universities/edit.blade.php",
+		"/D/WEB/dangkyduhoc/app/Models/University.php",
+		"/D/WEB/dangkyduhoc/app/Http/Controllers/Admin/UniversityMetaController.php",
+		"/D/WEB/dangkyduhoc/resources/views/admin/universities/create.blade.php",
+		"/D/WEB/dangkyduhoc/resources/views/admin/scholarship/edit.blade.php",
+		"/D/WEB/dangkyduhoc/app/Http/Controllers/Admin/ScholarshipController.php",
+		"/D/WEB/dangkyduhoc/resources/views/admin/scholarship/index.blade.php",
+		"/D/WEB/dangkyduhoc/resources/views/admin/scholarship/create.blade.php",
+		"/D/WEB/dangkyduhoc/app/Models/Scholarships.php",
+		"/D/WEB/dangkyduhoc/resources/views/admin/menu/create.blade.php",
+		"/D/WEB/dangkyduhoc/resources/views/user/compare.blade.php",
+		"/D/WEB/dangkyduhoc/app/Http/Controllers/User/ApplyCourseController.php",
+		"/D/WEB/dangkyduhoc/resources/views/user/continue_apply.blade.php",
+		"/D/WEB/dangkyduhoc/app/Http/Controllers/Admin/FairController.php",
+		"/D/WEB/dangkyduhoc/resources/views/admin/fair/showRegister.blade.php",
+		"/D/WEB/dangkyduhoc/app/Http/Controllers/User/FairController.php"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"bootstrap/",
+			"assets/",
+			"bootstrap"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"/homestay/bootstrap/",
+			"/homestay/assets/"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": ".env",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 825,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								379,
+								379
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/ninhv/Desktop/garo-estate-gh-pages/index-5.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 55016,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								55016
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "resources/views/homepage/index.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 55514,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1313,
+								1314
+							]
+						],
+						"settings":
+						{
+							"auto_name": "index.blade.php",
+							"incomplete_sync": null,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "routes/web.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4921,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								456,
+								456
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 231.0
+	},
+	"pinned_build_system": "",
+	"project": "homestay.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"w",
+				"routes\\web.php"
+			],
+			[
+				"package",
+				"package.json"
+			],
+			[
+				"homeco",
+				"app\\Http\\Controllers\\User\\HomeController.php"
+			],
+			[
+				"web.php",
+				"routes\\web.php"
+			],
+			[
+				"vendor/mail",
+				"vendor\\laravel\\framework\\src\\Illuminate\\Mail\\Mailable.php"
+			],
+			[
+				"routesig",
+				"vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteSignatureParameters.php"
+			],
+			[
+				"authenticate",
+				"kuponhub\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Events\\Authenticated.php"
+			],
+			[
+				"filesystemadapter",
+				"kuponhub\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\FilesystemAdapter.php"
+			],
+			[
+				"providerrepository",
+				"seaculture_association\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\ProviderRepository.php"
+			],
+			[
+				"unisharp/laravelfilemanager/laravelfilemanagerserviceprovider",
+				"tesla\\vendor\\unisharp\\laravel-filemanager\\src\\LaravelFilemanagerServiceProvider.php"
+			],
+			[
+				"very",
+				"file_export\\app\\Http\\Middleware\\VerifyCsrfToken.php"
+			],
+			[
+				"filesystema",
+				"file_export\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\FilesystemAdapter.php"
+			],
+			[
+				"file",
+				"kuponhub\\config\\filesystems.php"
+			],
+			[
+				".en",
+				"file_export\\.env"
+			],
+			[
+				"config/fil",
+				"file_export\\config\\filesystems.php"
+			],
+			[
+				"filesystem/a",
+				"file_export\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\FilesystemAdapter.php"
+			],
+			[
+				"/files/share",
+				"tesla\\public\\files\\shares\\Anh xáº¥u xÃ­ chá»© khÃ´ng xáº¥u xa - PhiÃªn báº£n siÃªu hÃ i hÆ°á»›c QuynhAka.mp4"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 890.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 254.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

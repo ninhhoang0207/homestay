@@ -10,7 +10,12 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+// Route::get('html', 'HomeController@searchHotel');
+Route::group(['prefix'=>'html'], function() {
+	Route::get('', 'Homepage\HomestayController@index');
+	Route::get('detail', 'Homepage\DetailController@detail')->name('html.detailHotel');
+	Route::get('search', 'Homepage\HomeStayController@search')->name('ajax.search');
+});
 //===============================================Back-end==============================================
 Auth::routes();
 Route::get('login/facebook', 'SocialAuthController@fbRedirectToProvider')->name('facebookLogin');

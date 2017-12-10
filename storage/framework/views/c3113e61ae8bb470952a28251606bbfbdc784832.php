@@ -284,6 +284,7 @@
 												<p><span class="glyphicon glyphicon-flag"></span> <?php echo e($value->diachi); ?></p>
 												<p class="hidden-lg"><span class="glyphicon glyphicon-usd"></span> <?php echo app('translator')->getFromJson('search/general.giodau'); ?> <?php echo e($value->phongdon_motgio); ?> k/h, <?php echo app('translator')->getFromJson('search/general.quadem'); ?> <?php echo e($value->phongdon_quadem); ?>, <?php echo e($value->phongdon_nhieungay); ?>k/<?php echo app('translator')->getFromJson('search/general.ngay'); ?></p>
 												<p class="hidden-xs"><span class="glyphicon glyphicon-map-marker"></span> <?php echo app('translator')->getFromJson('search/general.khoangcach'); ?>: <?php echo e($value->khoangcach); ?>km <?php echo app('translator')->getFromJson('search/general.taivitricuaban'); ?> <a href="<?php echo e(route('viewMap',['id'=>$value->nn_id])); ?>" class="view-map map-location">( <?php echo app('translator')->getFromJson('search/general.xembando'); ?> )</a></p>
+												
 												<?php foreach ($value->dichvu as $key1 => $value1): ?>
 													<div class="tooltip-x hidden-xs"> <img src="<?php echo e(asset('images/'.$value1.'.png')); ?>" alt="">
 														<span class="tooltiptext"><?php echo e($ten_dichvu[$value1]); ?></span>
@@ -667,6 +668,19 @@ $('#view-map').on('click',function(event){
 		$(this).parent().addClass('active');
 		var range = $('#distance').val();
 		search('sortByPrice',range);
-	})
+	});
+
+	$('#search_form').validate({
+		rules : {
+			address : "required",
+			from_time : "required",
+			to_time : "required",
+		},
+		messages : {
+			address : "<?php echo e(Lang::get('val.message')); ?>",
+			from_time : "<?php echo e(Lang::get('val.message')); ?>",
+			to_time : "<?php echo e(Lang::get('val.message')); ?>",
+		}
+	});
 </script>
 </html>

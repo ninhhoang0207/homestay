@@ -283,6 +283,7 @@
 												<p><span class="glyphicon glyphicon-flag"></span> {{$value->diachi}}</p>
 												<p class="hidden-lg"><span class="glyphicon glyphicon-usd"></span> @lang('search/general.giodau') {{$value->phongdon_motgio}} k/h, @lang('search/general.quadem') {{$value->phongdon_quadem}}, {{$value->phongdon_nhieungay}}k/@lang('search/general.ngay')</p>
 												<p class="hidden-xs"><span class="glyphicon glyphicon-map-marker"></span> @lang('search/general.khoangcach'): {{$value->khoangcach}}km @lang('search/general.taivitricuaban') <a href="{{route('viewMap',['id'=>$value->nn_id])}}" class="view-map map-location">( @lang('search/general.xembando') )</a></p>
+												
 												<?php foreach ($value->dichvu as $key1 => $value1): ?>
 													<div class="tooltip-x hidden-xs"> <img src="{{asset('images/'.$value1.'.png')}}" alt="">
 														<span class="tooltiptext">{{$ten_dichvu[$value1]}}</span>
@@ -665,6 +666,19 @@ $('#view-map').on('click',function(event){
 		$(this).parent().addClass('active');
 		var range = $('#distance').val();
 		search('sortByPrice',range);
-	})
+	});
+
+	$('#search_form').validate({
+		rules : {
+			address : "required",
+			from_time : "required",
+			to_time : "required",
+		},
+		messages : {
+			address : "{{Lang::get('val.message')}}",
+			from_time : "{{Lang::get('val.message')}}",
+			to_time : "{{Lang::get('val.message')}}",
+		}
+	});
 </script>
 </html>

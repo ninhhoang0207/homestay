@@ -139,7 +139,6 @@
                $('#li_account').empty();
                $('#li_account').append(data);
             },350);
-
             setTimeout(function(){
                $('#myModal').remove();
             },2000);

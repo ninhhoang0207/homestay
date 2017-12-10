@@ -27,7 +27,6 @@ class SocialAuthController extends Controller
      */
     public function fbHandleProviderCallback(Request $request)
     {
-        dd(1);
         $user = Socialite::driver('facebook')->user();
         Session::put('social_user',$user);
         $user_in_db = DB::table('users')->where('email',$user->email)

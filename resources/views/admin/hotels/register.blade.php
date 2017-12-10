@@ -548,6 +548,9 @@ $('#register-form').validate({
         singleroom_number : "required",
         doubleroom_number : "required",
         otherroom_number  : "required",
+        singleroom_square : "required",
+        doubleroom_square : "required",
+        otherroom_square  : "required",
 
         'singleroom_price[0]' : "required",
         'doubleroom_price[0]' : "required",
@@ -581,6 +584,9 @@ $('#register-form').validate({
         singleroom_number : "{{Lang::get('val.message')}}",
         doubleroom_number : "{{Lang::get('val.message')}}",
         otherroom_number  : "{{Lang::get('val.message')}}",
+        singleroom_square : "{{Lang::get('val.message')}}",
+        doubleroom_square : "{{Lang::get('val.message')}}",
+        otherroom_square  : "{{Lang::get('val.message')}}",
 
         'singleroom_price[0]' : "{{Lang::get('val.message')}}",
         'doubleroom_price[0]' : "{{Lang::get('val.message')}}",

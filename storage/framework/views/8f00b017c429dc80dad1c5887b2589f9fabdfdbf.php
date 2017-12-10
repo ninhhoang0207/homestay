@@ -137,6 +137,7 @@
 <?php $__env->startPush('scripts'); ?>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUtVPgnRKR8TwzcKdUkjkFpD6Aerf68ZY&sensor=true&libraries=places&language=vi"></script>
 <script src ="<?php echo e(asset('js/jquery.datetimepicker.js')); ?>" type="text/javascript" ></script>
+<script src="<?php echo e(asset('js/jquery.validate.js')); ?>"></script>
 <script type="text/javascript">
 
 //Check place google map
@@ -219,5 +220,19 @@ $('#from_time').datetimepicker({
         }
     });
 
+</script>
+<script type="text/javascript">
+  $('#search_form').validate({
+    rules : {
+      address : "required",
+      from_time : "required",
+      to_time : "required",
+    },
+    messages : {
+      address : "<?php echo e(Lang::get('val.message')); ?>",
+      from_time : "<?php echo e(Lang::get('val.message')); ?>",
+      to_time : "<?php echo e(Lang::get('val.message')); ?>",
+    }
+  });
 </script>
 <?php $__env->stopPush(); ?>
